@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  INSTANCE: 'ATT&CK Evaluations Library/ael'
+  INSTANCE: 'ATTACK Evaluations Library/ael'
   ARTIFACT: 'webHelpAEL2-all.zip'
   DOCKER_VERSION: '241.15989'
 

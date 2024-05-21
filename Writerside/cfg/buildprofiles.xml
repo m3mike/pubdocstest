@@ -4,11 +4,11 @@
 
     <build-profile instance="ael">
         <variables>
-            <noindex-content>true</noindex-content>
             <color-preset>vivid</color-preset>
             <primary-color>iris</primary-color>
             <header-logo>attackevals-logo.png</header-logo>
             <feedback-url>https://attackevals.mitre-engenuity.org/contact-us/</feedback-url>
+            <noindex-content>true</noindex-content>
         </variables>
         <footer>
             <social type="blog" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</social>

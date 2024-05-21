@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="ael"
-                 name="ATT&CK Evaluations Library"
+                 name="ATTACK Evaluations Library"
                  start-page="overview.md">
 
     <toc-element topic="overview.md"/>
