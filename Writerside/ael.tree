@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="ael"
+                 name="ATT&CK Evaluations Library"
+                 start-page="overview.md">
+
+    <toc-element topic="overview.md"/>
+    <toc-element topic="Enterprise.topic">
+        <toc-element toc-title="APT29">
+            <toc-element topic="apt29_Intelligence_Summary.md"/>
+            <toc-element topic="apt29_README.md"/>
+            <toc-element topic="apt29_CHANGE_LOG.md"/>
+            <toc-element topic="apt29_Operations_Flow.md"/>
+            <toc-element toc-title="Archive">
+                <toc-element topic="Archive_README.md"/>
+                <toc-element toc-title="Emulation_Plan">
+                    <toc-element topic="Archive_Emulation_Plan_README.md"/>
+                    <toc-element toc-title="Day 2">
+                        <toc-element topic="Day 2_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="Day 1">
+                        <toc-element topic="Day 1_payload_configs.md"/>
+                        <toc-element topic="Day 1_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="CALDERA_DIY">
+                    <toc-element toc-title="evals">
+                        <toc-element topic="ISSUES.md"/>
+                        <toc-element topic="evals_README.md"/>
+                        <toc-element toc-title="payloads">
+                            <toc-element topic="payloads_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Resources">
+                <toc-element topic="apt29_Resources_README.md"/>
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Scenario_1_payload_configs.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element topic="apt29_Emulation_Plan_README.md"/>
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Emulation_Plan_Scenario_1_Infrastructure.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_1_README1.md"/>
+                </toc-element>
+                <toc-element toc-title="Scenario_2">
+                    <toc-element topic="Emulation_Plan_Scenario_2_Infrastructure1.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_2_README1.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README1.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="Carbanak">
+            <toc-element topic="carbanak_Intelligence_Summary.md"/>
+            <toc-element topic="carbanak_README.md"/>
+            <toc-element topic="carbanak_CHANGE_LOG.md"/>
+            <toc-element topic="carbanak_Operations_Flow.md"/>
+            <toc-element toc-title="yara-rules">
+                <toc-element topic="carbanak_yara-rules_README.md"/>
+            </toc-element>
+            <toc-element toc-title="hashes">
+                <toc-element topic="carbanak_hashes_README.md"/>
+            </toc-element>
+            <toc-element toc-title="Resources">
+                <toc-element topic="carbanak_Resources_README.md"/>
+                <toc-element toc-title="step3">
+                    <toc-element topic="Resources_step3_README.md"/>
+                </toc-element>
+                <toc-element toc-title="placeholder_substitution">
+                    <toc-element topic="Resources_placeholder_substitution_README.md"/>
+                </toc-element>
+                <toc-element toc-title="step10">
+                    <toc-element topic="Resources_step10_README.md"/>
+                </toc-element>
+                <toc-element toc-title="utilities">
+                    <toc-element toc-title="attackkatz-source">
+                        <toc-element topic="attackkatz-source_HOWTO-Mimikatz.md"/>
+                        <toc-element topic="utilities_attackkatz-source_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="uac-bypass">
+                        <toc-element topic="utilities_uac-bypass_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="carbanak_c2server">
+                        <toc-element toc-title="c2server">
+                            <toc-element topic="carbanak_c2server_c2server_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="step7">
+                    <toc-element topic="Resources_step7_README.md"/>
+                </toc-element>
+                <toc-element toc-title="step8">
+                    <toc-element topic="Resources_step8_README.md"/>
+                </toc-element>
+                <toc-element toc-title="vendor_scripts">
+                    <toc-element toc-title="telemetry_generator">
+                        <toc-element topic="vendor_scripts_telemetry_generator_README.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element topic="carbanak_Emulation_Plan_README.md"/>
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Emulation_Plan_Scenario_1_Infrastructure1.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_1_README2.md"/>
+                </toc-element>
+                <toc-element toc-title="Scenario_2">
+                    <toc-element topic="Emulation_Plan_Scenario_2_Infrastructure2.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_2_README2.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README2.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="FIN7">
+            <toc-element topic="fin7_Intelligence_Summary.md"/>
+            <toc-element topic="fin7_README.md"/>
+            <toc-element topic="fin7_CHANGE_LOG.md"/>
+            <toc-element topic="fin7_Operations_Flow.md"/>
+            <toc-element toc-title="yara-rules">
+                <toc-element topic="fin7_yara-rules_README.md"/>
+            </toc-element>
+            <toc-element toc-title="hashes">
+                <toc-element topic="fin7_hashes_README.md"/>
+            </toc-element>
+            <toc-element toc-title="Resources">
+                <toc-element topic="fin7_Resources_README.md"/>
+                <toc-element toc-title="Step4">
+                    <toc-element toc-title="babymetal">
+                        <toc-element topic="babymetal_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="Step5">
+                    <toc-element topic="Step5_README.md"/>
+                    <toc-element toc-title="samcats-source">
+                        <toc-element topic="samcats-source_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="placeholder_substitution">
+                    <toc-element topic="Resources_placeholder_substitution_README1.md"/>
+                </toc-element>
+                <toc-element toc-title="Step10">
+                    <toc-element topic="Step10_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Step7">
+                    <toc-element topic="Step7_README.md"/>
+                    <toc-element toc-title="BOOSTWRITE-src">
+                        <toc-element topic="BOOSTWRITE-src_README.md"/>
+                        <toc-element toc-title="curl">
+                            <toc-element topic="curl_README.md"/>
+                            <toc-element topic="LICENSE.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="Step9">
+                    <toc-element topic="Step9_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Step8">
+                    <toc-element topic="Step8_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Step6">
+                    <toc-element topic="Step6_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element topic="fin7_Emulation_Plan_README.md"/>
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Emulation_Plan_Scenario_1_Infrastructure2.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_1_README3.md"/>
+                </toc-element>
+                <toc-element toc-title="Scenario_2">
+                    <toc-element topic="Emulation_Plan_Scenario_2_Infrastructure3.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_2_README3.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README3.md"/>
+                </toc-element>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="Sandworm">
+            <toc-element topic="sandworm_README.md"/>
+            <toc-element toc-title="Resources">
+                <toc-element toc-title="browser-creds">
+                    <toc-element topic="browser-creds_README.md"/>
+                </toc-element>
+                <toc-element toc-title="setup">
+                    <toc-element topic="Resources_setup_README.md"/>
+                </toc-element>
+                <toc-element toc-title="phpWebShell">
+                    <toc-element topic="phpWebShell_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Exaramel-Windows-Dropper">
+                    <toc-element topic="Exaramel-Windows-Dropper_README.md"/>
+                </toc-element>
+                <toc-element toc-title="suid-binary">
+                    <toc-element topic="suid-binary_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Exaramel">
+                    <toc-element topic="Exaramel_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Exaramel-Windows">
+                    <toc-element topic="Exaramel-Windows_README.md"/>
+                </toc-element>
+                <toc-element toc-title="cleanup">
+                    <toc-element topic="Resources_cleanup_README.md"/>
+                </toc-element>
+                <toc-element toc-title="NotPetya">
+                    <toc-element topic="NotPetya_README.md"/>
+                    <toc-element toc-title="SharpNP">
+                        <toc-element toc-title="packages">
+                            <toc-element toc-title="DllExport.1.7.4">
+                                <toc-element topic="DllExport.1.7.4_Readme.md"/>
+                                <toc-element toc-title="tools">
+                                    <toc-element toc-title="coreclr">
+                                        <toc-element topic="coreclr_README.md"/>
+                                    </toc-element>
+                                </toc-element>
+                            </toc-element>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="keylogger">
+                    <toc-element topic="keylogger_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Emulation_Plan_Scenario_1_Infrastructure3.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_1_README4.md"/>
+                </toc-element>
+                <toc-element toc-title="Scenario_2">
+                    <toc-element topic="Emulation_Plan_Scenario_2_Infrastructure4.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_2_README4.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README5.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Intelligence_Summary">
+                <toc-element topic="sandworm_Intelligence_Summary_Intelligence_Summary.md"/>
+            </toc-element>
+            <toc-element toc-title="Operations_Flow">
+                <toc-element topic="sandworm_Operations_Flow_Operations_Flow.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="Turla">
+            <toc-element topic="turla_README.md"/>
+            <toc-element toc-title="Resources">
+                <toc-element toc-title="Penquin">
+                    <toc-element topic="Penquin_README.md"/>
+                </toc-element>
+                <toc-element toc-title="control_server">
+                    <toc-element topic="Resources_control_server_README.md"/>
+                    <toc-element toc-title="handlers">
+                        <toc-element topic="HandlerCreationGuide.md"/>
+                        <toc-element toc-title="carbon">
+                            <toc-element topic="carbon_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="epic">
+                            <toc-element topic="epic_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="lightneuron">
+                            <toc-element topic="lightneuron_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="snake">
+                            <toc-element topic="snake_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="Carbon">
+                    <toc-element topic="Carbon_README.md"/>
+                    <toc-element toc-title="CarbonInstaller">
+                        <toc-element topic="CarbonInstaller_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="CommLib">
+                        <toc-element topic="CommLib_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="Orchestrator">
+                        <toc-element topic="Orchestrator_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="setup">
+                    <toc-element topic="Setup-RedTeam.md"/>
+                    <toc-element topic="WindowsService.md"/>
+                    <toc-element topic="TrafficRedirection.md"/>
+                    <toc-element topic="CertificateAuthority.md"/>
+                    <toc-element topic="DNS.md"/>
+                    <toc-element topic="GettingStarted.md"/>
+                    <toc-element topic="EmailFlow.md"/>
+                    <toc-element topic="Resources_setup_README1.md"/>
+                    <toc-element topic="Setup-Support.md"/>
+                    <toc-element topic="Infrastructure-Overview.md"/>
+                    <toc-element topic="Setup-Carbon.md"/>
+                    <toc-element topic="Setup-Snake.md"/>
+                    <toc-element toc-title="terraform">
+                        <toc-element toc-title="evals-ranges">
+                            <toc-element topic="evals-ranges_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                    <toc-element toc-title="files">
+                        <toc-element toc-title="watering_hole">
+                            <toc-element topic="watering_hole_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="cleanup">
+                    <toc-element topic="Resources_cleanup_README1.md"/>
+                </toc-element>
+                <toc-element toc-title="EPIC">
+                    <toc-element topic="EPIC_README.md"/>
+                    <toc-element toc-title="payload">
+                        <toc-element topic="payload_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="SimpleDropper">
+                        <toc-element toc-title="SimpleDropper">
+                            <toc-element topic="SimpleDropper_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                    <toc-element toc-title="Defense-Evasion">
+                        <toc-element toc-title="reflective-guard">
+                            <toc-element toc-title="reflective-guard">
+                                <toc-element topic="reflective-guard_README.md"/>
+                            </toc-element>
+                        </toc-element>
+                        <toc-element toc-title="reflective_injector">
+                            <toc-element toc-title="reflective_injector">
+                                <toc-element topic="reflective_injector_README.md"/>
+                            </toc-element>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="Mimikatz">
+                    <toc-element topic="Resources_Mimikatz_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Keylogger">
+                    <toc-element topic="Keylogger_README.md"/>
+                </toc-element>
+                <toc-element toc-title="LightNeuron">
+                    <toc-element topic="LightNeuron_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Snake">
+                    <toc-element topic="Snake_README.md"/>
+                    <toc-element toc-title="UserModule">
+                        <toc-element topic="UserModule_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="SnakeDriver">
+                        <toc-element topic="SnakeDriver_README.md"/>
+                        <toc-element toc-title="libinfinityhook">
+                            <toc-element topic="libinfinityhook_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                    <toc-element toc-title="SnakeInstaller">
+                        <toc-element topic="SnakeInstaller_README.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element topic="turla_Emulation_Plan_README.md"/>
+                <toc-element toc-title="Carbon_Scenario">
+                    <toc-element topic="Carbon_Detections_Scenario.md"/>
+                    <toc-element topic="Carbon_Protections_Scenario.md"/>
+                    <toc-element topic="Carbon_Scenario_README.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Carbon_Scenario.md"/>
+                    <toc-element topic="Emulation_Plan_yaml_README6.md"/>
+                    <toc-element topic="Snake_Scenario.md"/>
+                </toc-element>
+                <toc-element toc-title="Snake_Scenario">
+                    <toc-element topic="Snake_Protections_Scenario.md"/>
+                    <toc-element topic="Snake_Detections_Scenario.md"/>
+                    <toc-element topic="Snake_Scenario_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Intelligence_Summary">
+                <toc-element topic="turla_Intelligence_Summary_Intelligence_Summary.md"/>
+            </toc-element>
+            <toc-element toc-title="Operations_Flow">
+                <toc-element topic="Snake_Operations_Flow.md"/>
+                <toc-element topic="Carbon_Operations_Flow.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element toc-title="Wizard Spider">
+            <toc-element topic="wizard_spider_README.md"/>
+            <toc-element toc-title="Resources">
+                <toc-element toc-title="TrickBot">
+                    <toc-element topic="TrickBot_README.md"/>
+                    <toc-element toc-title="ReflectiveDLLInjection">
+                        <toc-element topic="Readme.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="control_server">
+                    <toc-element topic="Resources_control_server_README1.md"/>
+                    <toc-element toc-title="handlers">
+                        <toc-element toc-title="trickbot">
+                            <toc-element topic="handlers_trickbot_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="exaramel">
+                            <toc-element topic="handlers_exaramel_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="emotet">
+                            <toc-element topic="handlers_emotet_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="setup">
+                    <toc-element topic="Resources_setup_README2.md"/>
+                    <toc-element toc-title="file_generator">
+                        <toc-element topic="file_generator_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="troubleshooting">
+                    <toc-element topic="troubleshooting_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Emotet_Dropper">
+                    <toc-element topic="Emotet_Dropper_README.md"/>
+                </toc-element>
+                <toc-element toc-title="cleanup">
+                    <toc-element topic="Resources_cleanup_README2.md"/>
+                </toc-element>
+                <toc-element toc-title="Mimikatz">
+                    <toc-element topic="Resources_Mimikatz_README1.md"/>
+                </toc-element>
+                <toc-element toc-title="Rubeus">
+                    <toc-element topic="Rubeus_README.md"/>
+                    <toc-element topic="README_original.md"/>
+                    <toc-element topic="CHANGELOG.md"/>
+                </toc-element>
+                <toc-element toc-title="Ryuk">
+                    <toc-element topic="Ryuk_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Emotet">
+                    <toc-element topic="Emotet_README.md"/>
+                    <toc-element toc-title="OutlookScraper">
+                        <toc-element topic="OutlookScraper_README.md"/>
+                    </toc-element>
+                    <toc-element toc-title="LatMovementDLL">
+                        <toc-element topic="LatMovementDLL_README.md"/>
+                    </toc-element>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element toc-title="Scenario_1">
+                    <toc-element topic="Emulation_Plan_Scenario_1_Infrastructure4.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_1_README5.md"/>
+                </toc-element>
+                <toc-element toc-title="Scenario_2">
+                    <toc-element topic="Emulation_Plan_Scenario_2_Infrastructure5.md"/>
+                    <toc-element topic="Emulation_Plan_Scenario_2_README5.md"/>
+                </toc-element>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README7.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Intelligence_Summary">
+                <toc-element topic="wizard_spider_Intelligence_Summary_Intelligence_Summary.md"/>
+            </toc-element>
+            <toc-element toc-title="Operations_Flow">
+                <toc-element topic="wizard_spider_Operations_Flow_Operations_Flow.md"/>
+            </toc-element>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="Managed-Services.md">
+        <toc-element toc-title="OilRig">
+            <toc-element topic="oilrig_README.md"/>
+            <toc-element toc-title="Resources">
+                <toc-element toc-title="TwoFace">
+                    <toc-element topic="TwoFace_README.md"/>
+                </toc-element>
+                <toc-element toc-title="RDAT">
+                    <toc-element topic="RDAT_README.md"/>
+                </toc-element>
+                <toc-element toc-title="control_server">
+                    <toc-element topic="control_server_README.md"/>
+                    <toc-element toc-title="handlers">
+                        <toc-element toc-title="trickbot">
+                            <toc-element topic="trickbot_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="exaramel">
+                            <toc-element topic="exaramel_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="sidetwist">
+                            <toc-element topic="sidetwist_README.md"/>
+                        </toc-element>
+                        <toc-element toc-title="emotet">
+                            <toc-element topic="emotet_README.md"/>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="VALUEVAULT">
+                    <toc-element topic="VALUEVAULT_README.md"/>
+                    <toc-element toc-title="vendor">
+                        <toc-element toc-title="golang.org">
+                            <toc-element toc-title="x">
+                                <toc-element toc-title="sys">
+                                    <toc-element topic="sys_CONTRIBUTING.md"/>
+                                    <toc-element topic="sys_README.md"/>
+                                    <toc-element toc-title="unix">
+                                        <toc-element topic="unix_README.md"/>
+                                    </toc-element>
+                                </toc-element>
+                            </toc-element>
+                        </toc-element>
+                        <toc-element toc-title="github.com">
+                            <toc-element toc-title="google">
+                                <toc-element toc-title="uuid">
+                                    <toc-element topic="CONTRIBUTING.md"/>
+                                    <toc-element topic="uuid_README.md"/>
+                                </toc-element>
+                            </toc-element>
+                            <toc-element toc-title="mattn">
+                                <toc-element toc-title="go-sqlite3">
+                                    <toc-element topic="go-sqlite3_README.md"/>
+                                </toc-element>
+                            </toc-element>
+                        </toc-element>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="SideTwist_Dropper">
+                    <toc-element topic="SideTwist_Dropper_README.md"/>
+                    <toc-element toc-title="tests">
+                        <toc-element topic="tests_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="setup">
+                    <toc-element topic="setup_README.md"/>
+                    <toc-element toc-title="build_implants">
+                        <toc-element topic="build_implants_README.md"/>
+                    </toc-element>
+                </toc-element>
+                <toc-element toc-title="cleanup">
+                    <toc-element topic="cleanup_README.md"/>
+                </toc-element>
+                <toc-element toc-title="Mimikatz">
+                    <toc-element topic="Mimikatz_README.md"/>
+                </toc-element>
+                <toc-element toc-title="SideTwist">
+                    <toc-element topic="SideTwist_README.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Emulation_Plan">
+                <toc-element topic="Emulation_Plan_Infrastructure.md"/>
+                <toc-element topic="oilrig_Emulation_Plan_README.md"/>
+                <toc-element toc-title="yaml">
+                    <toc-element topic="Emulation_Plan_yaml_README4.md"/>
+                </toc-element>
+            </toc-element>
+            <toc-element toc-title="Intelligence_Summary">
+                <toc-element topic="Intelligence_Summary_Intelligence_Summary.md"/>
+            </toc-element>
+            <toc-element toc-title="Operations_Flow">
+                <toc-element topic="Operations_Flow_Operations_Flow.md"/>
+            </toc-element>
+        </toc-element>
+    </toc-element>
+</instance-profile>
