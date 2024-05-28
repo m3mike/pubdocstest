@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/pubdocstest">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770244693232">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770245489832">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770244693232" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770245489832" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770244693232" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770245489832" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770244693232" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770245489832" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,6 +173,11 @@
         <span>Emulation Scenario <span class="docs-emoji">&#x1F4D6;</span></span>
     </h1>
 </doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div>In&nbsp;</div>
+    <div><a href="../../categories/managed-services/">managed-services</a></div>
+</div>
+
 <p>This scenario follows OilRig’s multi-phase approach to exfiltrating sensitive data from a targeted server. OilRig leverages spearphishing to gain initial access onto an administrator’s workstation and deploys their SideTwist malware. Once persistence is established on the victim network, the attackers will escalate privileges and move laterally onto an EWS server. Further enumeration of the EWS server will lead to OilRig’s identification of a SQL server storing confidential critical infrastructure data. Characteristics of this campaign include: custom webshells, Windows and Microsoft 365 exploitation, and key attacker objective on obtaining control of the SQL server to steal victim files.<br>
 <br><strong>Phase 1:</strong> This scenario begins with the legitimate user Gosta downloading and opening a malicious Word document sent via spearphishing. When the document is first opened, the enabled macros will stealthily install the SideTwist backdoor on Gosta’s Windows host machine. SideTwist connects to a C2 server using GET &amp; POST requests, with responses hidden in the source code of an NotFlickr page. After performing initial enumeration on Gosta’s device, OilRig discovers that the user is a member of the administrator group on an Exchange Web Server (EWS).<br>
 <br><strong>Phase 2:</strong> The SideTwist backdoor harvests credentials and collects Gosta&#x27;s password using VALUEVAULT, a credential theft tool. Using Gosta’s stolen EWS credentials, the attackers establish a remote connection to EWS via RDP tunneling. Once connected to the EWS, OilRig deploys the TwoFace webshell on the server to gain access to additional resources on the network. The use of TwoFace to perform enumeration on the EWS will lead attackers to discover a SQL server.<br>
