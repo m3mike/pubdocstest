@@ -1,3 +1,0 @@
-# Managed Services
-
-Start typing here...
