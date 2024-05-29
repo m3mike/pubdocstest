@@ -3,7 +3,6 @@ output: .retype
 url: https://m3mike.github.io/pubdocstest/
 branding:
   title: ATTACK Evaluation Library
-  label: Docs
   logo: /images/attackevals-logo.png
   colors:
     label:                    # Label colors
