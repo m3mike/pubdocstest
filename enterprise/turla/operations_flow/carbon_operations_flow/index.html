@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/pubdocstest">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770245754452">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770305842172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=3.5.0.770245754452" rel="stylesheet">
+    <link href="../../../../resources/css/retype.css?v=3.5.0.770305842172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../resources/js/config.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../resources/js/lunr.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -53,6 +53,10 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../../images/attackevals-logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../../images/attackevals-logo.png">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">ATTACK Evaluation Library</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -65,7 +69,7 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                             </li>
         
                         </ul>
@@ -142,7 +146,7 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                                     </li>
             
                                 </ul>
@@ -166,12 +170,18 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<p>Based on open-source intelligence, the ATT&amp;CK ® Evaluations team created the below scenario leveraging techniques seen from Turla in the wild. We have adapted the scenario based on tools and resources available at the time. Below is a <doc-anchor-trigger to="#carbon-emulation-scenario-%F0%9F%93%96">scenario overview</doc-anchor-trigger>, <doc-anchor-trigger to="#scenario-steps%F0%9F%91%A3">step-by-step breakdown</doc-anchor-trigger>, and an <doc-anchor-trigger to="#infrastructure-diagram">infrastructure diagram</doc-anchor-trigger>.</p>
 <doc-anchor-target id="carbon-emulation-scenario" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#carbon-emulation-scenario">#</doc-anchor-trigger>
         <span>Carbon Emulation Scenario <span class="docs-emoji">&#x1F4D6;</span></span>
     </h1>
+</doc-anchor-target>
+<p>Based on open-source intelligence, the ATT&amp;CK ® Evaluations team created the below scenario leveraging techniques seen from Turla in the wild. We have adapted the scenario based on tools and resources available at the time. Below is a <doc-anchor-trigger to="#overview">scenario overview</doc-anchor-trigger>, <doc-anchor-trigger to="#scenario-steps">step-by-step breakdown</doc-anchor-trigger>, and an <doc-anchor-trigger to="#infrastructure-diagram">infrastructure diagram</doc-anchor-trigger>.</p>
+<doc-anchor-target id="overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
 </doc-anchor-target>
 <p>This scenario follows Turla’s multi-phase approach to implant a watering hole as a way to compromise more victims of interest. Turla gains initial access through a spearphishing email, a fake software installer is downloaded onto the victim machine and execution of the EPIC payload takes place. Once persistence and C2 communications are established, a domain controller is discovered, and CARBON-DLL is ingress into victim network. Further lateral movement takes the attackers to a Linux Apache server, PENGUIN is copied to the server and used to install a watering hole.</p>
 <p><br><strong>Phase 1:</strong> The scenario begins when the user Gunter visiting a typosquat domain via a spearphishing email. When the link is opened, a fake software installer is downloaded on Gunter’s Windows host machine. Gunter clicks “Install,” executing the malicious EPIC payload. EPIC establishes persistence and connects to a C2 server via a proxy web server using HTTP requests. The attacker’s enumeration on Gunter’s device, discovers a domain controller on the network and the domain admin Frieda.</p>
@@ -189,10 +199,10 @@
 </figure>
 </p>
 <doc-anchor-target id="scenario-steps">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-steps">#</doc-anchor-trigger>
         <span>Scenario Steps<span class="docs-emoji">&#x1F463;</span></span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -213,7 +223,7 @@
 <td style="text-align: center;"></td>
 <td>CTI deviation: we simplified the delivery of EPIC for feasibility purposes. According to CTI, Turla previously delivered EPIC using Adobe exploits (CVE-2013-3346 &amp; CVE-2013-5065) or watering hole attacks.</td>
 <td>EPIC</td>
-<td><br>https://securelist.com/the-epic-turla-operation/65545/<br><br>https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=4501a782-fd84-4f44-a231-ee2a3e838c39&amp;CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&amp;tab=librarydocuments</td>
+<td><br><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><br><a href="https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=4501a782-fd84-4f44-a231-ee2a3e838c39&amp;CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&amp;tab=librarydocuments">https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=4501a782-fd84-4f44-a231-ee2a3e838c39&amp;CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&amp;tab=librarydocuments</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 2</strong> <br> <strong>Establish Initial Access</strong> <br><a href="https://attack.mitre.org/techniques/T1027/">T1027</a>: Files or Information <br><a href="https://attack.mitre.org/techniques/T1055/001/">T1055.007</a>: Injection: Dynamic-link Library Injection <br><a href="https://attack.mitre.org/techniques/T1057/">T1057</a>: Discovery <br><a href="https://attack.mitre.org/techniques/T1059/003/">T1059.003</a>: and Scripting Interpreter: Windows Command Shell <br><a href="https://attack.mitre.org/techniques/T1087/001/">T1087.001</a>: Account Discovery: Local Account <br><a href="https://attack.mitre.org/techniques/T1012/">T1012</a>: Query Registry<br><a href="https://attack.mitre.org/techniques/T1082/">T1082</a>: Information Discovery <br><a href="https://attack.mitre.org/techniques/T1124/">T1124</a>: System Time Discovery <br><a href="https://attack.mitre.org/techniques/T1057/">T1057</a>: Process Discovery <br><a href="https://attack.mitre.org/techniques/T1135/">T1135</a>: Network Share Discovery <br><a href="https://attack.mitre.org/techniques/T1049/">T1049</a>: System Network Connections Discovery <br><a href="https://attack.mitre.org/techniques/T1069/001/">T1069.001</a>: Permission Groups Discovery: Local Groups <br><a href="https://attack.mitre.org/techniques/T1033/">T1033</a>: System Owner/User Discovery <br><a href="https://attack.mitre.org/techniques/T1083/">T1083</a>: File and Directory Discovery <br><a href="https://attack.mitre.org/techniques/T1560/002/">T1560.002</a>: Archive Collected Data: Archive via Library <br><a href="https://attack.mitre.org/techniques/T1132/001/">T1132.001</a>: Data Encoding: Standard Encoding <br><a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a>: Application Layer Protocol: Web Protocols <br><a href="https://attack.mitre.org/techniques/T1090/002/">T1090.002</a>: Proxy: External Proxy</td>
@@ -221,7 +231,7 @@
 <td style="text-align: center;">EPIC will terminate itself upon discovering any of the following processes:<br><em><code v-pre>tcpdump.exe</code></em><br><em><code v-pre>windump.exe</code></em><br><em><code v-pre>ethereal.exe</code></em><br><em><code v-pre>wireshark.exe</code></em><br><em><code v-pre>ettercap.exe</code></em><br><em><code v-pre>snoop.exe</code></em> <br><em><code v-pre>dsniff.exe</code></em></td>
 <td><strong>WordPress domain</strong>: CTI shows Turla has utilized compromised legitimate WordPress sites and WordPress-focused URLs for C2 purposes (e.g., <em>newsforum.servehttp[.]com/wordpress/wp-includes/css/img/upload.php</em>)</td>
 <td>EPIC</td>
-<td><br>https://securelist.com/the-epic-turla-operation/65545/ <br>https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf<br>https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf</td>
+<td><br><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a> <br><a href="https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf">https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf</a><br><a href="https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf">https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 3</strong> <br> <strong>Discovery &amp; Privilege Escalation</strong> <br> <a href="https://attack.mitre.org/techniques/T1033/">T1033</a>: System Owner/User Discovery <br><a href="https://attack.mitre.org/techniques/T1007/">T1007</a>: System Service Discovery <br><a href="https://attack.mitre.org/techniques/T1124/">T1124</a>: System Time Discovery <br><a href="https://attack.mitre.org/techniques/T1049/">T1049</a>: System Network Connections Discovery <br><a href="https://attack.mitre.org/techniques/T1135/">T1135</a>: Network Share Discovery <br><a href="https://attack.mitre.org/techniques/T1016/">T1016</a>: System Network Configuration Discovery <br><a href="https://attack.mitre.org/techniques/T1069/001/">T1069.001</a>: Permission Groups Discovery: Local Groups <br><a href="https://attack.mitre.org/techniques/T1069/002/">T1069.002</a>: Permission Groups Discovery: Domain Groups <br><a href="https://attack.mitre.org/techniques/T1012/">T1012</a>: Query Registry <br> <a href="https://attack.mitre.org/techniques/T1059/001/">T1059.001</a>: Command and Scripting Interpreter: PowerShell <br> <a href="https://attack.mitre.org/techniques/T1574/011/">T1574.011</a>: Hijack Execution Flow: Services Registry Permissions Weakness</td>
@@ -229,7 +239,7 @@
 <td style="text-align: center;">EPIC discovery commands: <br><code v-pre>arp -a</code> <br><br><code v-pre>net use</code> <br><br><code v-pre>ipconfig/all</code> <br><br><code v-pre>net localgroup administrators</code><br><br> <code v-pre>net group &quot;Doman Admins&quot; /domain</code> <br><br><code v-pre>net group &quot;Domain Computers&quot; /domain</code> <br><br><code v-pre>net group &quot;Domain Controllers&quot; /domain</code> <br><br><code v-pre>tasklist /svc</code> <br><br><code v-pre>reg query</code></td>
 <td></td>
 <td>EPIC</td>
-<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br>https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf<br>https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf<br>https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html<br>https://recon.cx/2018/brussels/resources/slides/RECON-BRX-2018-Visiting-The-Snake-Nest.pdf</td>
+<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf">https://go.recordedfuture.com/hubfs/reports/cta-2020-0312.pdf</a><br><a href="https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf">https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08080105/KL_Epic_Turla_Technical_Appendix_20140806.pdf</a><br><a href="https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html">https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html</a><br><a href="https://recon.cx/2018/brussels/resources/slides/RECON-BRX-2018-Visiting-The-Snake-Nest.pdf">https://recon.cx/2018/brussels/resources/slides/RECON-BRX-2018-Visiting-The-Snake-Nest.pdf</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 4</strong> <br> <strong>Persistence</strong> <br><a href="https://attack.mitre.org/techniques/T1105/">T1105</a>: Ingress Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1543/003/">T1543.003</a>: Create or Modify System Process: Windows Service <br><a href="https://attack.mitre.org/techniques/T1112/">T1112</a>: Modify Registry <br><a href="https://attack.mitre.org/techniques/T1569/002/">T1569.002</a>: System Services: Service Execution <br><a href="https://attack.mitre.org/techniques/T1036/004/">T1036.004</a>: Masquerade Task or Service <br><a href="https://attack.mitre.org/techniques/T1055/001/">T1055.007</a>: Injection: Dynamic-link Library Injection <br><a href="https://attack.mitre.org/techniques/T1033/">T1033</a>: System Owner/User Discovery <br><a href="https://attack.mitre.org/techniques/T1049/">T1049</a>: System Network Connections Discovery <br><a href="https://attack.mitre.org/techniques/T1071/001/">T1071.001</a>: Application Layer Protocol: Web Protocols <br><a href="https://attack.mitre.org/techniques/T1573/002/">T1573.002</a>: Encrypted Channel: Asymmetric Cryptography <br><a href="https://attack.mitre.org/techniques/T1573/001/">T1573.001</a>: Encrypted Channel: Symmetric Cryptography <br><a href="https://attack.mitre.org/techniques/T1132/001/">T1132.001</a>: Data Encoding: Standard Encoding <br><a href="https://attack.mitre.org/techniques/T1074/001/">T1074.001</a>: Data Staged: Local Data Staging</td>
@@ -237,7 +247,7 @@
 <td style="text-align: center;">CARBON: <br> <code v-pre>ipconfig -all</code>  <br><br> <code v-pre>netstat -r</code>  <br><br><code v-pre>netstat -an</code>  <br><br><code v-pre>nbtstat -n</code>  <br><br><code v-pre>nbtstat -s</code>  <br><br><code v-pre>net share</code>  <br><br><code v-pre>net file</code><br><br><code v-pre>net session</code><br><br><code v-pre>net use</code><br><br><code v-pre>net group</code><br><br><code v-pre>net view</code><br><br><code v-pre>net config</code><br><br><code v-pre>system info</code><br><br><code v-pre>net time \\127.0.0.1</code></td>
 <td>C2 Comms Details: <br><em>Internal</em>: P2P, use of named pipes, worker drones received tasks via named pipes <br><br><em>External</em>: use of HTTP requests, communication drones contacted C2s directly</td>
 <td>CARBON-DLL</td>
-<td><br>https://securelist.com/the-epic-turla-operation/65545/<br>https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html<br>https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/<br>https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity<br>https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra</td>
+<td><br><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html">https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html</a><br><a href="https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/">https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/</a><br><a href="https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity">https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity</a><br><a href="https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra">https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 5</strong> <br><strong>Lateral Movement to Domain Controller</strong> <br><a href="https://attack.mitre.org/techniques/T1105/">T1105</a>: Ingress Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1059/003/">T1059.003</a>: Command and Scripting Interpreter: Windows Command Shell <br><a href="https://attack.mitre.org/techniques/T1110/003/">T1110.003</a>: Brute Force: Password Spraying <br><a href="https://attack.mitre.org/techniques/T1021/002/">T1021.002</a>: Remote Services: SMB/Windows Admin Shares <br><a href="https://attack.mitre.org/techniques/T1070/004/">T1070.004</a>: Indicator Removal on Host: File Deletion <br><a href="https://attack.mitre.org/techniques/T1570/">T1570</a>: Lateral Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1053/005/">T1053.005</a>: Scheduled Task/Job: Scheduled Task <br><a href="https://attack.mitre.org/techniques/T1071/">T1071</a>: Application Layer Protocol <br><a href="https://attack.mitre.org/techniques/T1069/002/">T1069.002</a>: Permission Groups Discovery: Domain Groups <br><a href="https://attack.mitre.org/techniques/T1018/">T1018</a>: Remote System Discovery</td>
@@ -245,7 +255,7 @@
 <td style="text-align: center;"><code v-pre>net use</code> <br><br>EPIC has moved through the victim’s network using pre-defined passwords: <br><code v-pre>net use \\NET-DC-01\C$ &quot;P@ssw0rd&quot; /user:MOFA\Administrator</code></td>
 <td><em>Password spraying</em>: CTI shows that EPIC has been used to conduct password spraying (see Report 1 for details)</td>
 <td>CARBON-DLL</td>
-<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br>https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html<br>https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/<br>https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity<br>https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra</td>
+<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html">https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html</a><br><a href="https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/">https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/</a><br><a href="https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity">https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity</a><br><a href="https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra">https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 6</strong>  <br><strong>Preparation for Lateral Movement onto Second Host</strong> <br><a href="https://attack.mitre.org/techniques/T1105/">T1105</a>: Ingress Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1003/004/">T1003.004</a>:  Credential Dumping: LSA Secrets <br><a href="https://attack.mitre.org/techniques/T1550/002/">T1550.002</a>:  Alternate Authentication Material: Pass the Hash</td>
@@ -253,7 +263,7 @@
 <td style="text-align: center;"></td>
 <td></td>
 <td>CARBON-DLL <br> Mimikatz</td>
-<td><br>https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html (pp. 21)<br>https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/waterbug-espionage-governments</td>
+<td><br><a href="https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html">https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html</a> (pp. 21)<br><a href="https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/waterbug-espionage-governments">https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/waterbug-espionage-governments</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 7</strong>  <br><strong>Lateral Movement to Second Workstation</strong> <br><a href="https://attack.mitre.org/techniques/T1105/">T1105</a>: Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1550/002/">T1550.002</a>: Use Alternate Authentication Material: Pass the Hash <br><a href="https://attack.mitre.org/techniques/T1070/004/">T1070.004</a>: Indicator Removal on Host: File Deletion</td>
@@ -269,7 +279,7 @@
 <td style="text-align: center;">CARBON-DLL <br>Keylogger: <em>winsvcxgt.exe</em></td>
 <td></td>
 <td></td>
-<td><br>https://securelist.com/the-epic-turla-operation/65545/<br>https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html <br>https://blog.talosintelligence.com/2021/09/tinyturla.html</td>
+<td><br><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html">https://www.ncsc.admin.ch/ncsc/en/home/dokumentation/berichte/fachberichte/technical-report_apt_case_ruag.html</a> <br><a href="https://blog.talosintelligence.com/2021/09/tinyturla.html">https://blog.talosintelligence.com/2021/09/tinyturla.html</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 9</strong>  <br><strong>Lateral Movement to Linux Server</strong> <br><a href="https://attack.mitre.org/techniques/T1105/">T1105</a>: Ingress Tool Transfer <br><a href="https://attack.mitre.org/techniques/T1021/004/">T1021.004</a>: Remote Services: SSH <br><a href="https://attack.mitre.org/techniques/T1053/003/">T1053.003</a>: Scheduled Task/Job: Cron<br><a href="https://attack.mitre.org/techniques/T1078/">T1078.002</a>: Valid Accounts: Domain Accounts <br><a href="https://attack.mitre.org/techniques/T1070/004/">T1070.004</a>: Indicator Removal on Host: File Deletion <br><a href="https://attack.mitre.org/techniques/T1027/">T1027</a>: Obfuscated Files or Information <br><a href="https://attack.mitre.org/techniques/T1222/002/">T1222.002</a>: File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification <br><a href="https://attack.mitre.org/techniques/T1036/005/">T1036.005</a>: Masquerading: Match Legitimate Name or Location <br><a href="https://attack.mitre.org/techniques/T1543/">T1543</a>: Create or Modify System Process <br><a href="https://attack.mitre.org/techniques/T1205/">T1205</a>: Traffic Signaling <br><a href="https://attack.mitre.org/techniques/T1040/">T1040</a>: Network Sniffing</td>
@@ -277,24 +287,24 @@
 <td style="text-align: center;"></td>
 <td><strong>CTI deviation</strong>: SSH was not utilized in Turla’s PENQUINx64 campaign, but has been used in other Turla attacks <br><br><strong>PENQUINx64 variant</strong>: <br> - Written in C/C++ <br> - 64-bit architectures <br> - Defense evasion: embeds legitimate Linux binary to mimic cron <br><br> <strong>Old versions of PENQUIN</strong>:<br> - ELF 32-bit LSB exe <br> - Intel 80386 version 1 (SYSV) <br> - GNU/Linux 2.2.5 (stripped) <br> - Does not require admin/root privileges to run <br> - Requires 2 parameters: ID &amp; existing network interface name <br><br>Essentially, there are commands that are integrated into PENQUINx64’s code. Each command code corresponds to a specific function which the malware then executes. A full list of these functions is listed on page 13 of the Leonardo Spa report.</td>
 <td>PENQUINx64 <br> plink</td>
-<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br>https://blog.talosintelligence.com/2021/09/tinyturla.html<br>https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338<br>https://securelist.com/the-penquin-turla-2/67962/</td>
+<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://blog.talosintelligence.com/2021/09/tinyturla.html">https://blog.talosintelligence.com/2021/09/tinyturla.html</a><br><a href="https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338">https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338</a><br><a href="https://securelist.com/the-penquin-turla-2/67962/">https://securelist.com/the-penquin-turla-2/67962/</a></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Step 10</strong>   <br><strong>Installation of Watering Hole</strong>  <br><a href="https://attack.mitre.org/techniques/T1205/">T1205</a>: Traffic Signaling <br><a href="https://attack.mitre.org/techniques/T1132/001/">T1132.001</a>: Data Encoding: Standard Encoding <br><a href="https://attack.mitre.org/techniques/T1059/004/">T1059.004</a>: Command and Scripting Interpreter: Unix Shell <br><a href="https://attack.mitre.org/techniques/T1033/">T1033</a>: System Owner/User Discovery <br><a href="https://attack.mitre.org/techniques/T1083/">T1083</a>: File and Directory Discovery <br><a href="https://attack.mitre.org/techniques/T1189/">T1189</a>: Drive-by Compromise</td>
-<td style="text-align: left;">In order to maintain a foothold on the Apache web server, the adversary will utilize PENQUIN to install a watering hole. Specifically, the attackers send a magic packet to the Apache server, which is read by PENQUIN. This causes the creation of a reverse shell, which will perform discovery commands. Then, the attackers append additional script tags to a webpage previously accessed by Adalwolfa on the Apache server. This will allow users browsing the legitimate site http://kagarov/index[.]html to be redirected to the malicious, attacker-controlled site <code v-pre>anto-int[.]com</code>.</td>
+<td style="text-align: left;">In order to maintain a foothold on the Apache web server, the adversary will utilize PENQUIN to install a watering hole. Specifically, the attackers send a magic packet to the Apache server, which is read by PENQUIN. This causes the creation of a reverse shell, which will perform discovery commands. Then, the attackers append additional script tags to a webpage previously accessed by Adalwolfa on the Apache server. This will allow users browsing the legitimate site <a href="http://kagarov/index%5B.%5Dhtml">http://kagarov/index[.]html</a> to be redirected to the malicious, attacker-controlled site <code v-pre>anto-int[.]com</code>.</td>
 <td style="text-align: center;"></td>
 <td><strong>About PENQUINx64:</strong> the malware can also download remote files in chunks (1024 bytes each) to a local vile via the “do_vsdownload” function. This particular method will not work for the scenario since all “do_vs” functions are executed on remote IPs distinct from the C2 (a.k.a. a third peer). <br><br> <strong>CTI deviation:</strong> Based on available reporting, PENQUINx64 has not been used in watering hole attacks. However, Turla has used other tools/payloads to launch watering hole attacks to fingerprint victims for initial access purposes. This scenario uses the installation of watering holes to transition into the SNAKE scenario (second scenario). <br><br> <strong>Watering hole details:</strong>  <br><br> 1. User visits the compromised webpage hosting malicious Javascript.  <br><br>2. On the user’s first visit, the browser adds and evercookie which has an MD5 value provided by the web server. The evercookie will keep track of which users have already visited the site.  <br><br>3. On a user’s second visit, the stored MD5 value is used to identify the victim and the attackers will collect OS info which is sent to the C2 through POST requests.</td>
 <td>PENQUINx64</td>
-<td>https://securelist.com/the-epic-turla-operation/65545/<br>https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338 <br> <a href="https://securelist.com/the-penquin-turla-2/67962/">https://securelist.com/the-penquin-turla-2/67962/</a> <br> <a href="https://lab52.io/blog/looking-for-penquins-in-the-wild/">https://lab52.io/blog/looking-for-penquins-in-the-wild/</a> <br> <a href="https://www.welivesecurity.com/2020/03/12/tracking-turla-new-backdoor-armenian-watering-holes/">https://www.welivesecurity.com/2020/03/12/tracking-turla-new-backdoor-armenian-watering-holes/</a> <br> <a href="https://github.com/samyk/evercookie%7C">https://github.com/samyk/evercookie|</a></td>
+<td><a href="https://securelist.com/the-epic-turla-operation/65545/">https://securelist.com/the-epic-turla-operation/65545/</a><br><a href="https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338">https://www.leonardo.com/documents/15646808/16757471/Malware+Technical+Insight+_Turla+%E2%80%9CPenquin_x64%E2%80%9D.pdf/524e39d0-029f-1a99-08d5-c013be1b8717?t=1590739252338</a> <br> <a href="https://securelist.com/the-penquin-turla-2/67962/">https://securelist.com/the-penquin-turla-2/67962/</a> <br> <a href="https://lab52.io/blog/looking-for-penquins-in-the-wild/">https://lab52.io/blog/looking-for-penquins-in-the-wild/</a> <br> <a href="https://www.welivesecurity.com/2020/03/12/tracking-turla-new-backdoor-armenian-watering-holes/">https://www.welivesecurity.com/2020/03/12/tracking-turla-new-backdoor-armenian-watering-holes/</a> <br> <a href="https://github.com/samyk/evercookie">https://github.com/samyk/evercookie</a></td>
 </tr>
 </tbody>
 </table>
 </div>
 <doc-anchor-target id="infrastructure-diagram">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#infrastructure-diagram">#</doc-anchor-trigger>
         <span>Infrastructure Diagram</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
     <img src="../../resources/images/carboninfrastructure.png" alt="Carbon Infrastructure Diagram">

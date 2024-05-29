@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/pubdocstest">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770245754452">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770305842172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -22,20 +22,22 @@
     <meta property="og:url" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/operations_flow/">
     <meta property="og:title" content="APT29 Operations Flow">
     <meta property="og:description" content="Please see the formal APT29 Intelligence Summary which includes a break-down of the cited intelligence used for each step of this emulation.">
+    <meta property="og:image" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/emulation_plan/opflow_diagram.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/operations_flow/">
     <meta property="twitter:title" content="APT29 Operations Flow">
     <meta property="twitter:description" content="Please see the formal APT29 Intelligence Summary which includes a break-down of the cited intelligence used for each step of this emulation.">
+    <meta property="twitter:image" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/emulation_plan/opflow_diagram.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770245754452" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770305842172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,6 +53,10 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../images/attackevals-logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../images/attackevals-logo.png">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">ATTACK Evaluation Library</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -63,7 +69,7 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                             </li>
         
                         </ul>
@@ -140,7 +146,7 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                                     </li>
             
                                 </ul>
@@ -175,29 +181,29 @@
     <div><a href="../../categories/enterprise/">enterprise</a></div>
 </div>
 
-<p>Please see the formal <a href="/apt29/intelligence_summary.md">APT29 Intelligence Summary</a> which includes a break-down of the cited intelligence used for each step of this emulation.</p>
+<p>Please see the formal <a href="../intelligence_summary/">APT29 Intelligence Summary</a> which includes a break-down of the cited intelligence used for each step of this emulation.</p>
 <hr>
 <p><figure class="content-center">
-    <img src="/apt29/emulation_plan/opflow_diagram.png" alt="/Emulation_Plan/OpFlow_Diagram.png">
+    <img src="../emulation_plan/opflow_diagram.png" alt="/Emulation_Plan/OpFlow_Diagram.png">
     <figcaption class="caption">/Emulation_Plan/OpFlow_Diagram.png</figcaption>
 </figure>
 </p>
 <hr>
 <doc-anchor-target id="scenario-1">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-1">#</doc-anchor-trigger>
         <span>Scenario 1</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Based on <a href="https://attack.mitre.org/software/S0050/">CosmicDuke</a>, <a href="https://attack.mitre.org/software/S0051/">MiniDuke</a>, <a href="https://attack.mitre.org/software/S0053/">SeaDuke/SeaDaddy</a>, <a href="https://attack.mitre.org/software/S0046/">CozyDuke/CozyCar</a>, and <a href="https://attack.mitre.org/software/S0037/">HAMMERTOSS</a></p>
 <p>This scenario begins with a legitimate user clicking on a malicious payload delivered via a &quot;spray and pray&quot; spearphishing campaign. The attacker immediately kicks off a &quot;smash-and-grab&quot;, rapid espionage mission, gathering and exfiltrating data. After initial exfiltration, the attacker realizes the value of the victim and subsequently deploys a stealthier toolkit, changing TTPs and eventually moving laterally through the rest of the environment. The scenario ends with the execution of previously established persistence mechanisms.</p>
 <p>The content to execute this scenario was tested and developed using Pupy, Meterpreter, and other custom/modified scripts and payloads. Pupy and Meterpreter were chosen based on their available functionality and similarities to the adversary&#x27;s malware within the context of this scenario, but alternative red team tooling could be used to accurately execute these and other APT29 behaviors.</p>
 <hr>
 <doc-anchor-target id="scenario-2">
-    <h1>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-2">#</doc-anchor-trigger>
         <span>Scenario 2</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p>Based on <a href="https://attack.mitre.org/software/S0139/">PowerDuke</a>, <a href="https://attack.mitre.org/software/S0150/">POSHSPY</a>, <a href="https://attack.mitre.org/software/S0054/">CloudDuke</a>, and more recent (2016-2018) TTPs</p>
 <p>This scenario begins with a legitimate user clicking on a malicious payload delivered via a targeted spearphishing campaign. The attacker employs a methodical approach to compromising the initial target, establishing persistence, gathering credential material, then finally enumerating and compromising the entire domain. Data is exfiltrated to attacker controlled cloud storage. The scenario ends with a simulated time-lapse where previously established persistence mechanisms are executed.</p>
@@ -210,20 +216,20 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/apt29/intelligence_summary.md">Intelligence Summary</a></li>
-<li><a href="/apt29/operations_flow.md">Operations Flow</a></li>
-<li><a href="/apt29/emulation_plan/readme.md">Emulation Plan</a>
+<li><a href="../intelligence_summary/">Intelligence Summary</a></li>
+<li><a href="">Operations Flow</a></li>
+<li><a href="../emulation_plan/">Emulation Plan</a>
 <ul>
-<li><a href="/apt29/emulation_plan/scenario_1/infrastructure.md">Scenario 1 - Infrastructure</a></li>
-<li><a href="/apt29/emulation_plan/scenario_1/readme.md">Scenario 1</a></li>
-<li><a href="/apt29/emulation_plan/scenario_2/infrastructure.md">Scenario 2 - Infrastructure</a></li>
-<li><a href="/apt29/emulation_plan/scenario_2/readme.md">Scenario 2</a></li>
-<li><a href="/apt29/emulation_plan/yaml">YAML</a></li>
+<li><a href="../emulation_plan/scenario_1/infrastructure/">Scenario 1 - Infrastructure</a></li>
+<li><a href="../emulation_plan/scenario_1/">Scenario 1</a></li>
+<li><a href="../emulation_plan/scenario_2/infrastructure/">Scenario 2 - Infrastructure</a></li>
+<li><a href="../emulation_plan/scenario_2/">Scenario 2</a></li>
+<li><a href="../emulation_plan/yaml/">YAML</a></li>
 </ul>
 </li>
-<li><a href="/apt29/archive">Archive</a></li>
+<li><a href="../archive/">Archive</a></li>
 <li><a href="https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues">Issues</a></li>
-<li><a href="/apt29/change_log.md">Change Log</a></li>
+<li><a href="../change_log/">Change Log</a></li>
 </ul>
 
                                 

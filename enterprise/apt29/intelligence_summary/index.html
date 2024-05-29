@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/pubdocstest">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770245754452">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770305842172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -22,20 +22,22 @@
     <meta property="og:url" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/intelligence_summary/">
     <meta property="og:title" content="APT29 Intelligence Summary">
     <meta property="og:description" content="Objectives: APT29 is thought to be an organized and well-resourced cyber threat actor whose collection objectives align with the interests of the...">
+    <meta property="og:image" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/attack_layers/apt29_g0016.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/intelligence_summary/">
     <meta property="twitter:title" content="APT29 Intelligence Summary">
     <meta property="twitter:description" content="Objectives: APT29 is thought to be an organized and well-resourced cyber threat actor whose collection objectives align with the interests of the...">
+    <meta property="twitter:image" content="https://m3mike.github.io/pubdocstest/enterprise/apt29/attack_layers/apt29_g0016.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770245754452" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.770305842172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770245754452" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770305842172" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,6 +53,10 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../images/attackevals-logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../images/attackevals-logo.png">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">ATTACK Evaluation Library</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -63,7 +69,7 @@
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                             </li>
         
                         </ul>
@@ -140,7 +146,7 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://attackevals.mitre-engenuity.org">Attack Evaluations</a>
                                     </li>
             
                                 </ul>
@@ -201,47 +207,47 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-referenced-by-mitre-attck">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-referenced-by-mitre-attck">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions attributed to APT29 as referenced by <a href="https://attack.mitre.org/groups/G0016/">MITRE ATT&amp;CK</a>.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions attributed to APT29 as referenced by <a href="https://attack.mitre.org/groups/G0016/">MITRE ATT&amp;CK</a></span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/apt29_g0016.png" alt="/Attack_Layers/APT29_Scenario1.png">
+    <img src="../attack_layers/apt29_g0016.png" alt="/Attack_Layers/APT29_Scenario1.png">
     <figcaption class="caption">/Attack_Layers/APT29_Scenario1.png</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="scenario-1">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-1">#</doc-anchor-trigger>
-        <span><a href="/emulation_plan/scenario_1/readme.md">Scenario 1</a></span>
+        <span><a href="../emulation_plan/scenario_1/">Scenario 1</a></span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-implemented-in-scenario-1-in-the-referenced-reporting">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-implemented-in-scenario-1-in-the-referenced-reporting">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions attributed to APT29, as implemented in Scenario 1, in the <doc-anchor-trigger to="#references">referenced reporting</doc-anchor-trigger>.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions attributed to APT29, as implemented in Scenario 1, in the <doc-anchor-trigger to="#references">referenced reporting</doc-anchor-trigger></span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/apt29_scenario1.png" alt="/Attack_Layers/APT29_Scenario1.png">
+    <img src="../attack_layers/apt29_scenario1.png" alt="/Attack_Layers/APT29_Scenario1.png">
     <figcaption class="caption">/Attack_Layers/APT29_Scenario1.png</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="scenario-2">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-2">#</doc-anchor-trigger>
-        <span><a href="/emulation_plan/scenario_2/readme.md">Scenario 2</a></span>
+        <span><a href="../emulation_plan/scenario_2/">Scenario 2</a></span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-implemented-in-scenario-2-in-the-referenced-reporting">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-attributed-to-apt29-as-implemented-in-scenario-2-in-the-referenced-reporting">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions attributed to APT29, as implemented in Scenario 2, in the <doc-anchor-trigger to="#references">referenced reporting</doc-anchor-trigger>.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions attributed to APT29, as implemented in Scenario 2, in the <doc-anchor-trigger to="#references">referenced reporting</doc-anchor-trigger></span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/apt29_scenario2.png" alt="/Attack_Layers/APT29_Scenario2.png">
+    <img src="../attack_layers/apt29_scenario2.png" alt="/Attack_Layers/APT29_Scenario2.png">
     <figcaption class="caption">/Attack_Layers/APT29_Scenario2.png</figcaption>
 </figure>
 </p>
@@ -252,13 +258,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cosmicduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cosmicduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CosmicDuke, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CosmicDuke, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/cosmicduke_s0050.png" alt="/Attack_Layers/CosmicDuke_S0050.png">
+    <img src="../attack_layers/cosmicduke_s0050.png" alt="/Attack_Layers/CosmicDuke_S0050.png">
     <figcaption class="caption">/Attack_Layers/CosmicDuke_S0050.png</figcaption>
 </figure>
 </p>
@@ -269,13 +275,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-miniduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-miniduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using MiniDuke, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using MiniDuke, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/miniduke_s0051.png" alt="/Attack_Layers/MiniDuke_S0051.png">
+    <img src="../attack_layers/miniduke_s0051.png" alt="/Attack_Layers/MiniDuke_S0051.png">
     <figcaption class="caption">/Attack_Layers/MiniDuke_S0051.png</figcaption>
 </figure>
 </p>
@@ -286,13 +292,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-seaduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-seaduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using SeaDuke, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using SeaDuke, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/seaduke_s0053.png" alt="/Attack_Layers/SeaDuke_S0053.png">
+    <img src="../attack_layers/seaduke_s0053.png" alt="/Attack_Layers/SeaDuke_S0053.png">
     <figcaption class="caption">/Attack_Layers/SeaDuke_S0053.png</figcaption>
 </figure>
 </p>
@@ -303,13 +309,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cozycar-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cozycar-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CozyCar, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CozyCar, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/cozycar_s0046.png" alt="/Attack_Layers/CozyCar_S0046.png">
+    <img src="../attack_layers/cozycar_s0046.png" alt="/Attack_Layers/CozyCar_S0046.png">
     <figcaption class="caption">/Attack_Layers/CozyCar_S0046.png</figcaption>
 </figure>
 </p>
@@ -320,13 +326,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-hammertoss-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-hammertoss-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using HammerToss, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using HammerToss, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/hammertoss_s0037.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
+    <img src="../attack_layers/hammertoss_s0037.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
     <figcaption class="caption">/Attack_Layers/HAMMERTOSS_S0037.png</figcaption>
 </figure>
 </p>
@@ -337,13 +343,13 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-powerduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-powerduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using PowerDuke, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using PowerDuke, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/powerduke_s0139.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
+    <img src="../attack_layers/powerduke_s0139.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
     <figcaption class="caption">/Attack_Layers/HAMMERTOSS_S0037.png</figcaption>
 </figure>
 </p>
@@ -354,30 +360,30 @@
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-poshspy-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-poshspy-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using POSHSPY, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using POSHSPY, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/poshspy_s0150.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
+    <img src="../attack_layers/poshspy_s0150.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
     <figcaption class="caption">/Attack_Layers/HAMMERTOSS_S0037.png</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="cloudduke">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cloudduke">#</doc-anchor-trigger>
-        <span><a href="">CloudDuke</a></span>
+        <span><a href="https://attack.mitre.org/software/S0054">CloudDuke</a></span>
     </h2>
 </doc-anchor-target>
 <doc-anchor-target id="the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cloudduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-following-behaviors-are-in-scope-for-an-emulation-of-actions-performed-by-apt29-using-cloudduke-exclusively-based-on-current-intelligence-within-attck-for-the-given-software">#</doc-anchor-trigger>
-        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CloudDuke, exclusively based on current intelligence within ATT&amp;CK for the given software.</span>
-    </h4>
+        <span>The following behaviors are in scope for an emulation of actions performed by APT29 using CloudDuke, exclusively based on current intelligence within ATT&amp;CK for the given software</span>
+    </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/apt29/attack_layers/cloudduke_s0054.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
+    <img src="../attack_layers/cloudduke_s0054.png" alt="/Attack_Layers/HAMMERTOSS_S0037.png">
     <figcaption class="caption">/Attack_Layers/HAMMERTOSS_S0037.png</figcaption>
 </figure>
 </p>
@@ -653,20 +659,20 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/apt29/intelligence_summary.md">Intelligence Summary</a></li>
-<li><a href="/apt29/operations_flow.md">Operations Flow</a></li>
-<li><a href="/apt29/emulation_plan/readme.md">Emulation Plan</a>
+<li><a href="">Intelligence Summary</a></li>
+<li><a href="../operations_flow/">Operations Flow</a></li>
+<li><a href="../emulation_plan/">Emulation Plan</a>
 <ul>
-<li><a href="/apt29/emulation_plan/scenario_1/infrastructure.md">Scenario 1 - Infrastructure</a></li>
-<li><a href="/apt29/emulation_plan/scenario_1/readme.md">Scenario 1</a></li>
-<li><a href="/apt29/emulation_plan/scenario_2/infrastructure.md">Scenario 2 - Infrastructure</a></li>
-<li><a href="/apt29/emulation_plan/scenario_2/readme.md">Scenario 2</a></li>
-<li><a href="/apt29/emulation_plan/yaml">YAML</a></li>
+<li><a href="../emulation_plan/scenario_1/infrastructure/">Scenario 1 - Infrastructure</a></li>
+<li><a href="../emulation_plan/scenario_1/">Scenario 1</a></li>
+<li><a href="../emulation_plan/scenario_2/infrastructure/">Scenario 2 - Infrastructure</a></li>
+<li><a href="../emulation_plan/scenario_2/">Scenario 2</a></li>
+<li><a href="../emulation_plan/yaml/">YAML</a></li>
 </ul>
 </li>
-<li><a href="/apt29/archive">Archive</a></li>
+<li><a href="../archive/">Archive</a></li>
 <li><a href="https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues">Issues</a></li>
-<li><a href="/apt29/change_log.md">Change Log</a></li>
+<li><a href="../change_log/">Change Log</a></li>
 </ul>
 
                                 
