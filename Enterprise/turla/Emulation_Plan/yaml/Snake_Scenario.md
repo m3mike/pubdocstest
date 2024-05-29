@@ -1,22 +1,26 @@
+# Caldera port of Turla Snake
+
 The guide contains continued setup information for the Caldera port of the Turla Snake scenario. If you have not yet set up Caldera, please refer to the [initial setup instructions](README.md) first.
 
-# PREPARING THE TARGETS 
+## PREPARING THE TARGETS
 
 1. Start by logging into the second target host (file server) as the domain admin user. Then, disconnect the RDP (do not log off). This is required for Step 16 credential dumping to succeed.
 1. Log every other target user into their intended workstation and open Edge at least once to ignore any first time prompts. Log out of sessions.
 1. Copy `Microsoft.Exchange.WebServices.dll` from an existing Exchange server to `turla/Resources/caldera_port`.
 
-# STARTING THE CONTROL SERVER
+## STARTING THE CONTROL SERVER
 
-On the attacker machine, open a new terminal window and run the following to start the C2 server: 
-```
+On the attacker machine, open a new terminal window and run the following to start the C2 server:
+
+```shell
 cd caldera/plugins/emu/data/adversary-emulation-plans/turla/Resources/control_server
 rm logs.txt
 sudo ./controlServer -c ./config/turla_day2.yml
 ```
-Ensure the EPIC, Snake, and LightNeuron handlers start up before continuing to the next step. 
 
-# FACT SETUP
+Ensure the EPIC, Snake, and LightNeuron handlers start up before continuing to the next step.
+
+## FACT SETUP
 
 Before running the operation, you will need to make sure that the Turla fact source is properly configured for your environment. While default fact values are provided, they will need to be replaced by the appropriate values specific to your testing environment. On the left menu, under `Configuration`, select `fact sources`. Under the "Select a source" drop-down menu, select `Turla - Snake (Emu)`, which is the fact source for the Turla adversary. From there, update the following facts as needed:
 
@@ -48,7 +52,7 @@ Generally, it’s only possible to task a Caldera agent which is alive and activ
 
 Additionally, a separate Caldera requirement was implemented for the Lightneuron implant. This requirement will allow an ability to execute if the Lightneuron implant ID is listed in the agents tab of the Caldera Server GUI, even if the agent is dead and untrusted. The Lightneuron agent only sends one initial beacon to the Server, and is then considered a dead agent. This custom requirement will allow Lightneuron to be tasked despite that fact that it appears dead in the Caldera GUI.
 
-# RUNNING THE OPERATION
+## RUNNING THE OPERATION
 
 - After adjusting the fact source as needed, select operations from the left menu, under "Campaigns".
 - Select "+ Create Operation" to the right of the drop-down menu.
@@ -67,16 +71,16 @@ Additionally, a separate Caldera requirement was implemented for the Lightneuron
 - Keep visibility at 51.
 - When ready, hit the Start button and wait for your operation to complete.
 
-# TERMINATING THE OPERATION
+## TERMINATING THE OPERATION
 
 Press the stop button in the operation GUI to finish the operation. Terminate the Kali agent from the GUI or RDP/SSH into the machine to stop the agent processes.
 
-## Cleanup
+### Cleanup
+
 To remove artifacts following operation, follow the [Cleanup](./../../Resources/cleanup/README.md#snake-scenario) instructions for the Snake Scenario.
 
-# DEVIATIONS FROM THE ORIGINAL EMULATION PLAN
+## DEVIATIONS FROM THE ORIGINAL EMULATION PLAN
 
-## Step 11
- - User executes NTFVersion.exe via Run prompt instead of double clicking from Downloads folder.
+### Step 11
 
- 
+- User executes NTFVersion.exe via Run prompt instead of double clicking from Downloads folder.

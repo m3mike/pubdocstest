@@ -4,20 +4,20 @@ Mimikatz was used to list all available provider credentials using `sekurlsa::lo
 
 For this scenario, no significant changes were made to the original functionality of Mimikatz.
 
-Source code and pre-built Mimikatz can be downloaded from: https://github.com/gentilkiwi/mimikatz/
+Source code and pre-built Mimikatz can be downloaded from: <https://github.com/gentilkiwi/mimikatz/>
 
-### Dependencies
+## Dependencies
 
 To build the binary with the following instructions, you will need the following dependencies downloaded and installed:
 
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)
 - [Windows Driver Developer Kit (WinDDK)](http://www.microsoft.com/download/details.aspx?id=11800)
 
-### Build Instructions
+## Build Instructions
 
-From the [mimikatz folder](/Resources/Mimikatz/mimikatz/), run the following command:
+From the [mimikatz folder](/Enterprise/Resources/Mimikatz/mimikatz/), run the following command:
 
-```
+```cmd
 "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe" mimikatz.sln /build release
 ```
 
@@ -25,13 +25,13 @@ The resulting executable will be found in the x64 folder created during the buil
 
 This executable should be renamed as `m64.exe` and should be copied to Resources/payloads/TwoFace.
 
-### :microscope: CTI Sources
+## :microscope: CTI Sources
 
 - [Unit42's TwoFace Webshell: Persistent Access Point for Lateral Movement](https://unit42.paloaltonetworks.com/unit42-twoface-webshell-persistent-access-point-lateral-movement/)
 - [Unit42's Striking Oil: A Closer Look at Adversary Infrastructure](https://unit42.paloaltonetworks.com/unit42-striking-oil-closer-look-adversary-infrastructure/)
 - [Unit42's Oilrig Playbook Viewer](https://pan-unit42.github.io/playbook_viewer/?pb=oilrig)
 
-### :microscope: ATT&CK Techniques
+## :microscope: ATT&CK Techniques
 
 While [Mimikatz](https://attack.mitre.org/software/S0002/) covers a wider range of techniques, the version used in the scenario displayed the following:
 

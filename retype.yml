@@ -4,9 +4,13 @@ url: https://m3mike.github.io/pubdocstest/
 branding:
   title: ATTACK Evaluation Library
   label: Docs
+  logo: /images/attackevals-logo.png
+  colors:
+    label:                    # Label colors
+      text: "#6c4f9a"         # Custom color for the label text
 links:
-- text: Getting Started
-  link: https://retype.com/guides/getting-started/
+- text: Attack Evaluations
+  link: https://attackevals.mitre-engenuity.org
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
 start:

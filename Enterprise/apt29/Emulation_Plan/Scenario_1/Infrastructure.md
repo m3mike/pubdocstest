@@ -2,7 +2,7 @@
 
 We hope to capture the general structure of what is reported to have been seen being used by APT29.  The infrastructure listed below is specific to Scenario 1.  The requirements described herein should be considered a bare minimum to execute the scenario.  If you have the time and resources to remain true-to-form, you may elect to stand up multiple of each of these servers, non-contiguous IP space, etc.  If you are not concerned with emulating APT29 to this degree, this level of effort is not necessary.  You could for instance, phish, serve payload, and exfil from/to the same server.
 
-Please note that binary files hosted in [Scenario_1](/apt29/Resources/Scenario_1) and [Scenario_2](/apt29/Resources/Scenario_2) have been added to password protected zip files.  The password for these files is "malware."
+Please note that binary files hosted in [Scenario_1](/Enterprise/apt29/Resources/Scenario_1) and [Scenario_2](/Enterprise/apt29/Resources/Scenario_2) have been added to password protected zip files.  The password for these files is "malware."
 
 ---
 
@@ -37,15 +37,15 @@ This methodology assumes the following static IP address configurations:
 | Attack Platform | 192.168.0.4 |
 | Redirector | 192.168.0.5 |
 
-#### A note about red team payloads
+### A note about red team payloads
 
 - This evaluation utilizes four payloads that model APT29 malware.
 
 - The payloads are customized variants of reverse shells from Pupy RAT and Metasploit.
 
-- Pre-compiled payloads are available in the [resources](/apt29/Resources) directory; however, they are configured to connect back to static IP addresses 192.168.0.5 and 192.168.0.4.
+- Pre-compiled payloads are available in the [resources](/Enterprise/apt29/Resources) directory; however, they are configured to connect back to static IP addresses 192.168.0.5 and 192.168.0.4.
 
-- If you would like to build the payloads yourself, please see [payload_configs.md](/apt29/Resources/Scenario_1/payload_configs.md) for further instructions.
+- If you would like to build the payloads yourself, please see [payload_configs.md](/Enterprise/apt29/Resources/Scenario_1/payload_configs.md) for further instructions.
 
 ### Setup Redirector: 192.168.0.5 (or the value used for the Redirector IP)
 
@@ -72,7 +72,7 @@ sudo socat TCP-LISTEN:443,fork TCP:192.168.0.4:443 & sudo socat TCP-LISTEN:1234,
 
 ---
 
-## Target Infrastructure
+### Target Infrastructure
 
 1. 3 targets
     - 1 domain controller and 2 workstations
@@ -83,22 +83,22 @@ sudo socat TCP-LISTEN:443,fork TCP:192.168.0.4:443 & sudo socat TCP-LISTEN:1234,
 
 ---
 
-## Target Infrastructure Configuration
+### Target Infrastructure Configuration
 
-#### For each of the 2 target workstations:
+#### For each of the 2 target workstations
 
 1. Login in as user with administrator privileges
 2. Ensure Windows Defender is off or configured to alert-only
 3. Set UAC to never notify (<https://articulate.com/support/article/how-to-turn-user-account-control-on-or-off-in-windows-10>)
 4. Verify user has read/write/execute permissions in the C:\Windows\Temp directory
-5. Install Google Chrome (https://www.google.com/chrome/); cache credentials in Chrome password manager
-6. Import-PFX certificate found in [shockwave.local.pfx](/apt29/Resources/Scenario_1/shockwave.local.pfx). Instructions below:
+5. Install Google Chrome (<https://www.google.com/chrome/>); cache credentials in Chrome password manager
+6. Import-PFX certificate found in [shockwave.local.pfx](/Enterprise/apt29/Resources/Scenario_1/shockwave.local.pfx). Instructions below:
 
-#### Import PFX Certificate
+##### Import PFX Certificate
 
 Step 6.B of this emulation models [theft of Private Keys](https://attack.mitre.org/techniques/T1552/004/).
 
-1. Copy the PFX certificate located in the [shockwave.local.pfx](/apt29/Resources/Scenario_1/shockwave.local.pfx) file to the Windows victims.
+1. Copy the PFX certificate located in the [shockwave.local.pfx](/Enterprise/apt29/Resources/Scenario_1/shockwave.local.pfx) file to the Windows victims.
 
 2. Import the certificate using PowerShell:
 
@@ -106,22 +106,22 @@ Step 6.B of this emulation models [theft of Private Keys](https://attack.mitre.o
 Import-PfxCertificate -Exportable -FilePath "shockwave.local.pfx" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### Add RTLO character and place rcs.3aka3.doc on Windows Victim-1
+##### Add RTLO character and place rcs.3aka3.doc on Windows Victim-1
 
-* See [payload_configs.md](/apt29/Resources/Scenario_1/payload_configs.md) for instructions on how to update [cod.3aka3.scr](/apt29/Resources/Scenario_1/cod.3aka3.scr)
+- See [payload_configs.md](/Enterprise/apt29/Resources/Scenario_1/payload_configs.md) for instructions on how to update [cod.3aka3.scr](/Enterprise/apt29/Resources/Scenario_1/cod.3aka3.scr)
 
 ---
 
-## Additional Plan Resources
+### Additional Plan Resources
 
-- [Intelligence Summary](/apt29/Intelligence_Summary.md)
-- [Operations Flow](/apt29/Operations_Flow.md)
-- [Emulation Plan](/apt29/Emulation_Plan/README.md)
-  - [Scenario 1 - Infrastructure](/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
-  - [Scenario 1](/apt29/Emulation_Plan/Scenario_1/README.md)
-  - [Scenario 2 - Infrastructure](/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
-  - [Scenario 2](/apt29/Emulation_Plan/Scenario_2/README.md)
-  - [YAML](/apt29/Emulation_Plan/yaml)
-- [Archive](/apt29/Archive)
+- [Intelligence Summary](/Enterprise/apt29/Intelligence_Summary.md)
+- [Operations Flow](/Enterprise/apt29/Operations_Flow.md)
+- [Emulation Plan](/Enterprise/apt29/Emulation_Plan/README.md)
+  - [Scenario 1 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
+  - [Scenario 1](/Enterprise/apt29/Emulation_Plan/Scenario_1/README.md)
+  - [Scenario 2 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
+  - [Scenario 2](/Enterprise/apt29/Emulation_Plan/Scenario_2/README.md)
+  - [YAML](/Enterprise/apt29/Emulation_Plan/yaml)
+- [Archive](/Enterprise/apt29/Archive)
 - [Issues](https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues)
-- [Change Log](/apt29/CHANGE_LOG.md)
+- [Change Log](/Enterprise/apt29/CHANGE_LOG.md)

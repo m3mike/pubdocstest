@@ -24,17 +24,17 @@ We would like to formally thank the people that contributed to the content, revi
 
 ## Table of Contents
 
-- [Intelligence Summary](/apt29/Intelligence_Summary.md)
-- [Operations Flow](/apt29/Operations_Flow.md)
-- [Emulation Plan](/apt29/Emulation_Plan/README.md)
-  - [Scenario 1 - Infrastructure](/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
-  - [Scenario 1](/apt29/Emulation_Plan/Scenario_1/README.md)
-  - [Scenario 2 - Infrastructure](/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
-  - [Scenario 2](/apt29/Emulation_Plan/Scenario_2/README.md)
-  - [YAML](/apt29/Emulation_Plan/yaml)
-- [Archive](/apt29/Archive)
+- [Intelligence Summary](/Enterprise/apt29/Intelligence_Summary.md)
+- [Operations Flow](/Enterprise/apt29/Operations_Flow.md)
+- [Emulation Plan](/Enterprise/apt29/Emulation_Plan/README.md)
+  - [Scenario 1 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
+  - [Scenario 1](/Enterprise/apt29/Emulation_Plan/Scenario_1/README.md)
+  - [Scenario 2 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
+  - [Scenario 2](/Enterprise/apt29/Emulation_Plan/Scenario_2/README.md)
+  - [YAML](/Enterprise/apt29/Emulation_Plan/yaml)
+- [Archive](/Enterprise/apt29/Archive)
 - [Issues](https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues)
-- [Change Log](/apt29/CHANGE_LOG.md)
+- [Change Log](/Enterprise/apt29/CHANGE_LOG.md)
 
 ## Liability / Responsible Usage
 

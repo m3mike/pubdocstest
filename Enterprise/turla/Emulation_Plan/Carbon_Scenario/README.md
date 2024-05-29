@@ -2,6 +2,7 @@
 
 For ATT&CK Evaluations Enterprise Round 5, the Carbon scenario was developed to
 emulate Turla's utilization of the following software:
+
 - Epic
 - Carbon
 - PsExec
@@ -16,7 +17,7 @@ Evaluations Enterprise Round 5, where all prevention mechanisms and protection
 tooling is **disabled** to allow the full emulation plan to execute unobstructed.
 This allows the scenario to be executed from beginning to end, with each step
 building upon the previous. and for telemetry on red team activity to be
-gathered in full. 
+gathered in full.
 
 ## [Protections Scenario](./Carbon_Protections_Scenario.md)
 

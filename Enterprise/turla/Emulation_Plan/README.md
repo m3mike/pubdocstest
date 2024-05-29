@@ -2,7 +2,7 @@
 
 An **emulation plan** is the primary document used to execute the red team scenario during a purple team operation. This document includes red team execution commands, links to source code, ATT&CK techniques leveraged, and CTI reporting references.
 
-When we have multiple emulation plans, we break these plans into scenarios and provide a description of the plan's focus. 
+When we have multiple emulation plans, we break these plans into scenarios and provide a description of the plan's focus.
 
 | Emulation Plan | CTI Operations Flow | Description |
 | ----------------- | ------------------- | ----------- |

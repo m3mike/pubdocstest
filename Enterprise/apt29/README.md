@@ -20,7 +20,8 @@ The Operations Flow chains techniques together into a logical order that commonl
 The APT29 emulation plan is a human-readable, step-by-step / command-by-command implementation of APT29 TTPs. Structurally, the plan is organized into an infrastructure section, and two scenarios, as defined in the Operations Flow. The infrastructure section explains how to prepare the environment to execute both scenarios.  The human-readable plan is accompanied by a machine-readable plan implemented in YAML. The YAML includes all steps, commands, and syntax for both Scenario 1 and Scenario 2. The YAML template was nuanced to ensure that each step within the YAML is directly coupled with its equivalent in the human-readable version.
 
 ## Resources
-Please note that binary files hosted in [Scenario_1](/apt29/Resources/Scenario_1) and [Scenario_2](/apt29/Resources/Scenario_2) have been added to password protected zip files.  The password for these files is "malware."
+
+Please note that binary files hosted in [Scenario_1](/Enterprise/apt29/Resources/Scenario_1) and [Scenario_2](/Enterprise/apt29/Resources/Scenario_2) have been added to password protected zip files.  The password for these files is "malware."
 
 ## Acknowledgements
 
@@ -32,17 +33,17 @@ We would like to formally thank the people that contributed to the content, revi
 
 ## Table of Contents
 
-- [Intelligence Summary](/apt29/Intelligence_Summary.md)
-- [Operations Flow](/apt29/Operations_Flow.md)
-- [Emulation Plan](/apt29/Emulation_Plan/README.md)
-  - [Scenario 1 - Infrastructure](/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
-  - [Scenario 1](/apt29/Emulation_Plan/Scenario_1/README.md)
-  - [Scenario 2 - Infrastructure](/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
-  - [Scenario 2](/apt29/Emulation_Plan/Scenario_2/README.md)
-  - [YAML](/apt29/Emulation_Plan/yaml)
-- [Archive](/apt29/Archive)
+- [Intelligence Summary](/Enterprise/apt29/Intelligence_Summary.md)
+- [Operations Flow](/Enterprise/apt29/Operations_Flow.md)
+- [Emulation Plan](/Enterprise/apt29/Emulation_Plan/README.md)
+  - [Scenario 1 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_1/Infrastructure.md)
+  - [Scenario 1](/Enterprise/apt29/Emulation_Plan/Scenario_1/README.md)
+  - [Scenario 2 - Infrastructure](/Enterprise/apt29/Emulation_Plan/Scenario_2/Infrastructure.md)
+  - [Scenario 2](/Enterprise/apt29/Emulation_Plan/Scenario_2/README.md)
+  - [YAML](/Enterprise/apt29/Emulation_Plan/yaml)
+- [Archive](/Enterprise/apt29/Archive)
 - [Issues](https://github.com/center-for-threat-informed-defense/adversary_emulation_library/issues)
-- [Change Log](/apt29/CHANGE_LOG.md)
+- [Change Log](/Enterprise/apt29/CHANGE_LOG.md)
 
 ## Liability / Responsible Usage
 
